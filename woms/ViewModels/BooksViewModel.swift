@@ -16,6 +16,8 @@ class BooksViewModel: ObservableObject {
     }
     
     func removeBook(_ book: Book) {
-        // 
+        if let index = self.books.firstIndex(where: { $0.uuid == book.uuid }) {
+            self.books.remove(at: index)
+        }
     }
 }

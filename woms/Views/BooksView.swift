@@ -16,6 +16,12 @@ struct BooksView: View {
                 List {
                     ForEach (booksViewModel.books) { book in
                         Text(book.title)
+                        Button {
+                            booksViewModel.removeBook(book)
+                        } label: {
+                            Image(systemName: "trash.fill")
+                                .foregroundStyle(Color.red)
+                        }
                     }
                 }
             })
