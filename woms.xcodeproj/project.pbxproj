@@ -11,9 +11,15 @@
 		4F3EA4D92B0BFCAF00F716AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EA4D82B0BFCAF00F716AD /* ContentView.swift */; };
 		4F3EA4DB2B0BFCB100F716AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA4DA2B0BFCB100F716AD /* Assets.xcassets */; };
 		4F3EA4DE2B0BFCB100F716AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA4DD2B0BFCB100F716AD /* Preview Assets.xcassets */; };
+		4F681F922B0CA33C004A04E1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F912B0CA33C004A04E1 /* Book.swift */; };
+		4F681F942B0CA36B004A04E1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F932B0CA36B004A04E1 /* Game.swift */; };
+		4F681F982B0CA38C004A04E1 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F972B0CA38C004A04E1 /* Serie.swift */; };
+		4F681F9A2B0CA393004A04E1 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F992B0CA393004A04E1 /* Film.swift */; };
+		4F681F9C2B0CA3E0004A04E1 /* NewBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F9B2B0CA3E0004A04E1 /* NewBookViewModel.swift */; };
+		4F681F9F2B0CA6A1004A04E1 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F681F9E2B0CA6A1004A04E1 /* BooksViewModel.swift */; };
 		4FC826592B0C06DF0060CB14 /* SeriesAndFilmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC826582B0C06DF0060CB14 /* SeriesAndFilmsView.swift */; };
 		4FC8265B2B0C0C3E0060CB14 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8265A2B0C0C3E0060CB14 /* BooksView.swift */; };
-		4FC8265D2B0C0D410060CB14 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8265C2B0C0D410060CB14 /* AddBookView.swift */; };
+		4FC8265D2B0C0D410060CB14 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8265C2B0C0D410060CB14 /* NewBookView.swift */; };
 		4FC8265F2B0C0E230060CB14 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8265E2B0C0E230060CB14 /* GamesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,9 +29,15 @@
 		4F3EA4D82B0BFCAF00F716AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F3EA4DA2B0BFCB100F716AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3EA4DD2B0BFCB100F716AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F681F912B0CA33C004A04E1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		4F681F932B0CA36B004A04E1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4F681F972B0CA38C004A04E1 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
+		4F681F992B0CA393004A04E1 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		4F681F9B2B0CA3E0004A04E1 /* NewBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookViewModel.swift; sourceTree = "<group>"; };
+		4F681F9E2B0CA6A1004A04E1 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		4FC826582B0C06DF0060CB14 /* SeriesAndFilmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesAndFilmsView.swift; sourceTree = "<group>"; };
 		4FC8265A2B0C0C3E0060CB14 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
-		4FC8265C2B0C0D410060CB14 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		4FC8265C2B0C0D410060CB14 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 		4FC8265E2B0C0E230060CB14 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,12 +71,10 @@
 		4F3EA4D52B0BFCAF00F716AD /* woms */ = {
 			isa = PBXGroup;
 			children = (
+				4F681F8F2B0CA2AD004A04E1 /* Models */,
+				4F681F902B0CA2B4004A04E1 /* ViewModels */,
+				4F681F8E2B0CA2A6004A04E1 /* Views */,
 				4F3EA4D62B0BFCAF00F716AD /* womsApp.swift */,
-				4F3EA4D82B0BFCAF00F716AD /* ContentView.swift */,
-				4FC8265E2B0C0E230060CB14 /* GamesView.swift */,
-				4FC826582B0C06DF0060CB14 /* SeriesAndFilmsView.swift */,
-				4FC8265A2B0C0C3E0060CB14 /* BooksView.swift */,
-				4FC8265C2B0C0D410060CB14 /* AddBookView.swift */,
 				4F3EA4DA2B0BFCB100F716AD /* Assets.xcassets */,
 				4F3EA4DC2B0BFCB100F716AD /* Preview Content */,
 			);
@@ -77,6 +87,46 @@
 				4F3EA4DD2B0BFCB100F716AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4F681F8E2B0CA2A6004A04E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F681F9D2B0CA653004A04E1 /* Components */,
+				4FC8265E2B0C0E230060CB14 /* GamesView.swift */,
+				4FC826582B0C06DF0060CB14 /* SeriesAndFilmsView.swift */,
+				4FC8265A2B0C0C3E0060CB14 /* BooksView.swift */,
+				4FC8265C2B0C0D410060CB14 /* NewBookView.swift */,
+				4F3EA4D82B0BFCAF00F716AD /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F681F8F2B0CA2AD004A04E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F681F912B0CA33C004A04E1 /* Book.swift */,
+				4F681F932B0CA36B004A04E1 /* Game.swift */,
+				4F681F972B0CA38C004A04E1 /* Serie.swift */,
+				4F681F992B0CA393004A04E1 /* Film.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F681F902B0CA2B4004A04E1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4F681F9B2B0CA3E0004A04E1 /* NewBookViewModel.swift */,
+				4F681F9E2B0CA6A1004A04E1 /* BooksViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4F681F9D2B0CA653004A04E1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +204,13 @@
 				4FC826592B0C06DF0060CB14 /* SeriesAndFilmsView.swift in Sources */,
 				4F3EA4D72B0BFCAF00F716AD /* womsApp.swift in Sources */,
 				4FC8265B2B0C0C3E0060CB14 /* BooksView.swift in Sources */,
-				4FC8265D2B0C0D410060CB14 /* AddBookView.swift in Sources */,
+				4F681F9F2B0CA6A1004A04E1 /* BooksViewModel.swift in Sources */,
+				4F681F9C2B0CA3E0004A04E1 /* NewBookViewModel.swift in Sources */,
+				4F681F9A2B0CA393004A04E1 /* Film.swift in Sources */,
+				4F681F982B0CA38C004A04E1 /* Serie.swift in Sources */,
+				4FC8265D2B0C0D410060CB14 /* NewBookView.swift in Sources */,
+				4F681F922B0CA33C004A04E1 /* Book.swift in Sources */,
+				4F681F942B0CA36B004A04E1 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +346,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"woms/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "What's On My Shelf";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +376,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"woms/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "What's On My Shelf";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
