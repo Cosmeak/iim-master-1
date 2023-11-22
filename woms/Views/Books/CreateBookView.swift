@@ -1,5 +1,5 @@
 //
-//  AddBookView.swift
+//  CreateBookView.swift
 //  woms
 //
 //  Created by Guillaume FINE on 20/11/2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct NewBookView: View {
-    @StateObject var bookViewModel = NewBookViewModel()
-    @Binding var newBookViewShowed: Bool
+struct CreateBookView: View {
+    @StateObject var viewModel = CreateBookViewModel()
+    @Binding var isShowed: Bool
     @Binding var books: [Book]
     
     var body: some View {
@@ -18,14 +18,15 @@ struct NewBookView: View {
                 .font(.system(size: 32))
                 .padding()
             Form(content: {
-                TextField("Title", text: $bookViewModel.title)
-                TextField("Author", text: $bookViewModel.author)
-                DatePicker("Read Date", selection: $bookViewModel.readDate, in: Date()..., displayedComponents: .date)
+                TextField("Title", text: $viewModel.title)
+                TextField("Author", text: $viewModel.author)
+                TextField("Cover", text: $viewModel.cover)
+                DatePicker("Read Date", selection: $viewModel.readDate, in: Date()..., displayedComponents: .date)
                 
                 Button {
-                    let book = bookViewModel.createNewBook()
+                    let book = viewModel.createNewBook()
                     books.append(book)
-                    newBookViewShowed = false
+                    isShowed = false
                 } label: {
                     Text("Save")
                 }
@@ -33,15 +34,14 @@ struct NewBookView: View {
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(4)
-
             })
         })
     }
 }
 
 #Preview {
-    NewBookView(
-        newBookViewShowed: Binding(get: {
+    CreateBookView(
+        isShowed: Binding(get: {
             return true
         }, set: { _ in
             

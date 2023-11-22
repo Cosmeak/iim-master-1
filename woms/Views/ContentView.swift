@@ -18,7 +18,7 @@ struct ContentView: View {
     @ViewBuilder
     var navView: some View {
         TabView {
-            SeriesAndFilmsView()
+            TvShowsView()
                 .tabItem { Label("Series & Films", systemImage: "movieclapper.fill") }
             BooksView()
                 .tabItem { Label("Books", systemImage: "books.vertical.fill") }

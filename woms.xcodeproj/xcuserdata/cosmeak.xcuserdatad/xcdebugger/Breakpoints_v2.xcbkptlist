@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "08BC8BC5-DD05-4DF1-8596-7BD4E62B584D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78B021A3-96CE-4D05-BF2C-BFACDF0F230D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "woms/ViewModels/TvShowsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getPopularTvShows(page:lang:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78B021A3-96CE-4D05-BF2C-BFACDF0F230D - abbc23cc6b630dc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "woms.TvShowsViewModel.getPopularTvShows() -&gt; ()"
+                  moduleName = "woms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cosmeak/Developer/cosmeak/woms/woms/ViewModels/TvShowsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1100">
+               </Location>
+               <Location
+                  uuid = "78B021A3-96CE-4D05-BF2C-BFACDF0F230D - abbc23cc6b630dc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "woms.TvShowsViewModel.getPopularTvShows() -&gt; ()"
+                  moduleName = "woms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cosmeak/Developer/cosmeak/woms/woms/ViewModels/TvShowsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1112">
+               </Location>
+               <Location
+                  uuid = "78B021A3-96CE-4D05-BF2C-BFACDF0F230D - abbc23cc6b630dc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "woms.TvShowsViewModel.getPopularTvShows() -&gt; ()"
+                  moduleName = "woms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cosmeak/Developer/cosmeak/woms/woms/ViewModels/TvShowsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C77E991A-9D81-4A84-988F-B3FB4A293FF9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "woms/ViewModels/TvShowsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getPopularTvShows(page:lang:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFF475F4-29FF-4AE1-8B77-82C204B8FA89"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "woms/ViewModels/TvShowsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getPopularTvShows(page:lang:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E32E284-EDA3-4EFA-9CAB-DBB82EC41DF0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "woms/ViewModels/TvShowsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getPopularTvShows(page:lang:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C15DD83D-F277-47DE-A410-C9978FCFA468"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "woms/ViewModels/TvShowsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getPopularTvShows(page:lang:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

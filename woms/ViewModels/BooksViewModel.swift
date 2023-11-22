@@ -8,7 +8,7 @@
 import Foundation
 
 class BooksViewModel: ObservableObject {
-    @Published var showingNewBookView: Bool = false
+    @Published var createBookIsShowed: Bool = false
     @Published var books: [Book]
     
     init() {
