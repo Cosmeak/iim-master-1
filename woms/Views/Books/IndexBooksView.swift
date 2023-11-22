@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct BooksView: View {
-    @StateObject var viewModel = BooksViewModel()
+struct IndexBooksView: View {
+    @StateObject var viewModel = IndexBooksViewModel()
     
     var body: some View {
         NavigationView(content: {
@@ -43,5 +43,5 @@ struct BooksView: View {
 }
 
 #Preview {
-    BooksView()
+    IndexBooksView()
 }

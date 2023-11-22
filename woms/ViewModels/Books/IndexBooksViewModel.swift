@@ -1,5 +1,5 @@
 //
-//  BookListViewModel.swift
+//  IndexBookListViewModel.swift
 //  woms
 //
 //  Created by Guillaume FINE on 21/11/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BooksViewModel: ObservableObject {
+class IndexBooksViewModel: ObservableObject {
     @Published var createBookIsShowed: Bool = false
     @Published var books: [Book]
     

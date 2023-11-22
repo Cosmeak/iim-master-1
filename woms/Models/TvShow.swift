@@ -10,7 +10,7 @@ import Foundation
 class TvShow: Identifiable, ObservableObject, Codable {
     let id: Int
     let adult: Bool
-    let backdrop_path: String
+    let backdrop_path: String?
     let genre_ids: [Int]
     let original_language: String
     let original_title: String
