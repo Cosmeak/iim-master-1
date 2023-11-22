@@ -9,23 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView(content: {
-            navView
-        })
-        .padding()
-    }
-    
-    @ViewBuilder
-    var navView: some View {
         TabView {
-            IndexTvShowsView()
-                .tabItem { Label("Series & Films", systemImage: "movieclapper.fill") }
-            IndexBooksView()
-                .tabItem { Label("Books", systemImage: "books.vertical.fill") }
-            GamesView()
-                .tabItem { Label("Games", systemImage: "gamecontroller.fill") }
+            NavigationView {
+                IndexTvShowsView()
+                    .navigationTitle("Series & Films")
+            }.tabItem { Label("Series & Films", systemImage: "movieclapper.fill") }
+
+            
+            NavigationView {
+                IndexBooksView()
+                    .navigationTitle("Books")
+            }.tabItem { Label("Books", systemImage: "books.vertical.fill") }
+           
+            NavigationView {
+                GamesView()
+                    .navigationTitle("Games")
+            }.tabItem { Label("Games", systemImage: "gamecontroller.fill") }
         }
     }
+
 }
 
 #Preview {
