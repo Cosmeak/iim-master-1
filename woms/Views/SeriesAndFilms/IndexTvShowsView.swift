@@ -14,7 +14,29 @@ struct IndexTvShowsView: View {
         ZStack(content: {
             List {
                 ForEach (viewModel.tvShows.indices, id: \.self) { index in
-                    NavigationLink(viewModel.tvShows[index].title, destination: ReadTvShowView(tvShow: viewModel.tvShows[index]))
+                    let show = viewModel.tvShows[index]
+                    NavigationLink(destination: ReadTvShowView(tvShow: show)) {
+                        HStack {
+                            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(show.poster_path)")) { image in
+                                    image
+                                        .image?.resizable()
+                                        .scaledToFit()
+                            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
+                            Text(show.title)
+                                .font(.headline)
+                                .foregroundStyle(.background)
+                                .padding(EdgeInsets(top: 25, leading: 5, bottom: 25, trailing: 5))
+                        }
+                    }
+                        .frame(height: 64)
+                        .listRowSeparator(.hidden)
+                        .listStyle(.plain)
+                        .listRowBackground(
+                            RoundedRectangle(cornerRadius: 5)
+                                .background(.clear)
+                                .foregroundColor(.primary)
+                                .frame(height: 64)
+                        )
                         .onAppear(perform: {
                             if (viewModel.thresholdMeeting(index: index as Int)) {
                                 viewModel.getPopularMovies(page: viewModel.actualPage + 1)

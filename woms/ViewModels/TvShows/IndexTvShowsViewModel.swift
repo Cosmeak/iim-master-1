@@ -28,7 +28,7 @@ class IndexTvShowsViewModel: ObservableObject {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?page=\(page)&language=\(lang)") else { return print("error url") }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("Bearer \(TMDBToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(TMDB_TOKEN)", forHTTPHeaderField: "Authorization")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil { return print(error as Any) }
             

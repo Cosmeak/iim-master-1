@@ -27,7 +27,6 @@ struct IndexBooksView: View {
                     }
                 }
             })
-            .navigationTitle("Books")
             .toolbar {
                 Button {
                     viewModel.createBookIsShowed = true
