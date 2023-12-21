@@ -16,6 +16,9 @@
       "auth": {
         "iimdevops2c41394e2": {},
         "userPoolGroups": {}
+      },
+      "function": {
+        "getApod": {}
       }
     }
   }
