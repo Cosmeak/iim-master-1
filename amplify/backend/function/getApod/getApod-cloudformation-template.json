@@ -15,6 +15,18 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "storagenasaName": {
+      "Type": "String",
+      "Default": "storagenasaName"
+    },
+    "storagenasaArn": {
+      "Type": "String",
+      "Default": "storagenasaArn"
+    },
+    "storagenasaStreamArn": {
+      "Type": "String",
+      "Default": "storagenasaStreamArn"
     }
   },
   "Conditions": {
@@ -69,6 +81,15 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "STORAGE_NASA_NAME": {
+              "Ref": "storagenasaName"
+            },
+            "STORAGE_NASA_ARN": {
+              "Ref": "storagenasaArn"
+            },
+            "STORAGE_NASA_STREAMARN": {
+              "Ref": "storagenasaStreamArn"
             }
           }
         },
