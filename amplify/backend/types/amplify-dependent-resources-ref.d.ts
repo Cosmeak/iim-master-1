@@ -12,5 +12,24 @@ export type AmplifyDependentResourcesAttributes = {
     "userPoolGroups": {
       "usersGroupRole": "string"
     }
+  },
+  "function": {
+    "getApod": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    }
+  },
+  "storage": {
+    "nasa": {
+      "Arn": "string",
+      "Name": "string",
+      "PartitionKeyName": "string",
+      "PartitionKeyType": "string",
+      "Region": "string",
+      "StreamArn": "string"
+    }
   }
 }

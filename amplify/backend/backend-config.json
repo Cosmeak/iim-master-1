@@ -43,5 +43,17 @@
       "service": "Cognito-UserPool-Groups"
     }
   },
-  "function": {}
+  "function": {
+    "getApod": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "storage": {
+    "nasa": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
 }
