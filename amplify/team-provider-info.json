@@ -18,7 +18,13 @@
         "userPoolGroups": {}
       },
       "function": {
-        "getApod": {}
+        "getApod": {
+          "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
+          "s3Key": "amplify-builds/getApod-764446427a7a6146526a-build.zip"
+        }
+      },
+      "storage": {
+        "nasa": {}
       }
     }
   }
