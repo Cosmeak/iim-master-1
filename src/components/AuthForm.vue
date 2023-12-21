@@ -3,7 +3,7 @@
   import "@aws-amplify/ui-vue/styles.css";
 
   import { Amplify } from 'aws-amplify';
-  import config from './amplifyconfiguration.json';
+  import config from '../amplifyconfiguration.json';
   Amplify.configure(config);
 </script>
 
