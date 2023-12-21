@@ -46,6 +46,17 @@
   "function": {
     "getApod": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "nasa"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
