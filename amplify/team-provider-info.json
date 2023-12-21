@@ -14,7 +14,8 @@
     },
     "categories": {
       "auth": {
-        "iimdevops2c41394e2": {}
+        "iimdevops2c41394e2": {},
+        "userPoolGroups": {}
       }
     }
   }
