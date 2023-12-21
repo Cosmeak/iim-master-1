@@ -61,6 +61,24 @@
       "service": "Lambda"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_getApod_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getApod"
+        }
+      ]
+    },
+    "AMPLIFY_function_getApod_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getApod"
+        }
+      ]
+    }
+  },
   "storage": {
     "nasa": {
       "providerPlugin": "awscloudformation",
