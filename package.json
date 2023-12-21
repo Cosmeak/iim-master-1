@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@picocss/pico": "^1.5.10",
     "aws-amplify": "^6.0.8",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
