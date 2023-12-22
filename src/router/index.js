@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/nasa',
       name: 'nasa',
       component: () => import('../views/NasaView.vue'),
+    },
+    {
+      path: '/user/:id',
+      name: 'user',
+      component: () => import('../views/UserView.vue')
     }
   ]
 })
