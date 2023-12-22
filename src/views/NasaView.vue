@@ -28,10 +28,12 @@ getPictures();
   <h1>Nasa</h1>
 
   <template v-for="(picture, index) in nasa" :key="index">
-    <div class="card">
-      <h4>{{ picture.title }}</h4>
-      <img :src="picture.image" :alt="picture.title" />
-      <p>{{ picture.explanation }}</p>
+    <div class="grid">
+      <article>
+        <header><h4>{{ picture.title }}</h4></header>
+        <img :src="picture.image" :alt="picture.title" />
+        <footer>{{ picture.explanation }}</footer>
+      </article>
     </div>
   </template>
 
