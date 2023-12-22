@@ -10,7 +10,8 @@
       "StackName": "amplify-iimdevops2-dev-212229",
       "StackId": "arn:aws:cloudformation:eu-west-1:791462579254:stack/amplify-iimdevops2-dev-212229/aad55bf0-a03e-11ee-950e-0a0cae95ff0d",
       "AmplifyAppId": "d3vpxitqgrd6iu",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-iimdevops2-dev-212229-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-iimdevops2-dev-212229-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-iimdevops2-dev-212229-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -25,10 +26,17 @@
         "iimdevops2c41394e2PostConfirmation": {
           "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
           "s3Key": "amplify-builds/iimdevops2c41394e2PostConfirmation-72617a6663506b627251-build.zip"
+        },
+        "updateUserDynamo": {
+          "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
+          "s3Key": "amplify-builds/updateUserDynamo-704637726736336d792f-build.zip"
         }
       },
       "storage": {
         "nasa": {},
+        "users": {}
+      },
+      "api": {
         "users": {}
       }
     }

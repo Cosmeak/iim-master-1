@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "paths": {
+    "/updateUser": {
+      "name": "/updateUser",
+      "lambdaFunction": "updateUserDynamo",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
+    }
+  }
+}
