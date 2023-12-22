@@ -1,5 +1,19 @@
 {
   "api": {
+    "nasa": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getNasaPictures"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "users": {
       "dependsOn": [
         {
@@ -86,6 +100,22 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "getNasaPictures": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "nasa"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "iimdevops2c41394e2PostConfirmation": {
       "build": true,
       "dependsOn": [
@@ -133,6 +163,22 @@
         {
           "category": "function",
           "resourceName": "getApod"
+        }
+      ]
+    },
+    "AMPLIFY_function_getNasaPictures_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getNasaPictures"
+        }
+      ]
+    },
+    "AMPLIFY_function_getNasaPictures_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getNasaPictures"
         }
       ]
     },

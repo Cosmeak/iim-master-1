@@ -1,20 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import AuthForm from './components/AuthForm.vue'
+import Header from '@/components/Header.vue'
 </script>
 
 <template>
-    <header>
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-        <div class="wrapper">
-            <nav>
-                <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/nasa">Nasa</RouterLink>
-            </nav>
-        </div>
-    </header>
+  <Header />
 
-    <AuthForm />
+  <main class="container">
     <RouterView />
+  </main>
+
+  <footer class="container">
+    <p>
+      copyleft © 2023
+    </p>
+  </footer>
 </template>

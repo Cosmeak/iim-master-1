@@ -30,6 +30,10 @@
         "updateUserDynamo": {
           "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
           "s3Key": "amplify-builds/updateUserDynamo-704637726736336d792f-build.zip"
+        },
+        "getNasaPictures": {
+          "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
+          "s3Key": "amplify-builds/getNasaPictures-3377592f746e474a6839-build.zip"
         }
       },
       "storage": {
@@ -37,7 +41,8 @@
         "users": {}
       },
       "api": {
-        "users": {}
+        "users": {},
+        "nasa": {}
       }
     }
   }
