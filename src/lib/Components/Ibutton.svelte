@@ -15,7 +15,7 @@ const colors = {
 
 <button 
 	type={$$props.type}
-	class={$$props.class + ` shadow-sm px-4 py-2 rounded duration-200 ` + colors[color] }
+	class={$$props.class + ` shadow-sm px-4 py-1 rounded duration-200 ` + colors[color] }
 >
 	{text}
 </button>
