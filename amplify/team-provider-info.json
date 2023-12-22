@@ -21,10 +21,15 @@
         "getApod": {
           "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
           "s3Key": "amplify-builds/getApod-764446427a7a6146526a-build.zip"
+        },
+        "iimdevops2c41394e2PostConfirmation": {
+          "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
+          "s3Key": "amplify-builds/iimdevops2c41394e2PostConfirmation-72617a6663506b627251-build.zip"
         }
       },
       "storage": {
-        "nasa": {}
+        "nasa": {},
+        "users": {}
       }
     }
   }
