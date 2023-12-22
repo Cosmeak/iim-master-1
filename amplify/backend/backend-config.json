@@ -23,6 +23,14 @@
           ],
           "category": "function",
           "resourceName": "updateUserDynamo"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getUserData"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -116,6 +124,22 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "getUserData": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "users"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "iimdevops2c41394e2PostConfirmation": {
       "build": true,
       "dependsOn": [
@@ -179,6 +203,22 @@
         {
           "category": "function",
           "resourceName": "getNasaPictures"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUserData_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUserData"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUserData_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUserData"
         }
       ]
     },

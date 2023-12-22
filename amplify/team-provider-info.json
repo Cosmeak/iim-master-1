@@ -29,11 +29,15 @@
         },
         "updateUserDynamo": {
           "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
-          "s3Key": "amplify-builds/updateUserDynamo-704637726736336d792f-build.zip"
+          "s3Key": "amplify-builds/updateUserDynamo-4f436732516b62634546-build.zip"
         },
         "getNasaPictures": {
           "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
           "s3Key": "amplify-builds/getNasaPictures-3377592f746e474a6839-build.zip"
+        },
+        "getUserData": {
+          "deploymentBucketName": "amplify-iimdevops2-dev-212229-deployment",
+          "s3Key": "amplify-builds/getUserData-6869733532657858474e-build.zip"
         }
       },
       "storage": {

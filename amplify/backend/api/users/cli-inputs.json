@@ -12,6 +12,16 @@
           "update"
         ]
       }
+    },
+    "/getUser": {
+      "name": "/getUser",
+      "lambdaFunction": "getUserData",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }

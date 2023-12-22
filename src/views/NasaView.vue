@@ -30,8 +30,8 @@ getPictures();
   <template v-for="(picture, index) in nasa" :key="index">
     <div class="grid">
       <article>
-        <header><h4>{{ picture.title }}</h4></header>
-        <img :src="picture.image" :alt="picture.title" />
+        <header><h4 style="margin: 0;">{{ picture.title }}</h4></header>
+        <img style="width: 100%;" :src="picture.image" :alt="picture.title" />
         <footer>{{ picture.explanation }}</footer>
       </article>
     </div>
