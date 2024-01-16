@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { onMount, onDestroy, setContext, createEventDispatcher, tick } from 'svelte';
-  import Leaflet from 'leaflet';
-  import 'leaflet/dist/leaflet.css';
+  import { onMount, onDestroy, setContext, createEventDispatcher, tick } from "svelte";
+  import Leaflet from "leaflet";
+  import "leaflet/dist/leaflet.css";
 
   export let view: Leaflet.LatLngExpression | undefined = undefined;
   export let zoom: number | undefined = undefined;
@@ -27,7 +27,7 @@
         event.popup.update();
        });
 
-    Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
   });
@@ -39,7 +39,7 @@
   });
 
   // Expose map to children components with svelte context
-  setContext('map', {
+  setContext("map", {
     getMap: () => map,
   });
 
