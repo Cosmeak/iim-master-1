@@ -2,10 +2,10 @@
 
 <script>
   
-  const imagePath = '/src/img/youtube-logo.png';
-  const imagePath1 = '/src/img/instagram-logo.png';
-  const imagePath2 = '/src/img/linkedin-logo.png';
-  const imagePath3 = '/src/img/facebook-logo.png';
+  const imagePath = '/src/lib/assets/youtube-logo.png';
+  const imagePath1 = '/src/lib/assets/instagram-logo.png';
+  const imagePath2 = '/src/lib/assets/linkedin-logo.png';
+  const imagePath3 = '/src/lib/assets/facebook-logo.png';
 
   
   </script>
@@ -64,11 +64,12 @@
  
   
   </div>
+
   <div class="mb-12 px-60">
     <h2 >Accéder au centre d'aide</h2>
   </div>
 
-  <div class="flex space-x-4 gap-14" > 
+  <div class="flex gap-14" > 
 
    <div class="mb-12 px-60"> 
     <h1> Mairie </h1>
@@ -105,9 +106,9 @@
   </div> 
 
 
-  <div  class="flex space-x-4 mb-12  px-28 gap-96"> 
+  <div  class="flex  mb-12  px-28 gap-96"> 
 
-    <div  class="flex space-x-4 gap-24"> 
+    <nav  class="flex space-x-4 gap-24"> 
         <div>
             <img src={imagePath} alt="youtube" />
         </div>
@@ -120,7 +121,7 @@
         <div >
             <img src={imagePath3} alt="facebook" />
         </div>
-    </div>
+    </nav>
       
       
       

@@ -1,6 +1,6 @@
 
 <script>
-   const imagePath = '/src/img/image 1.png';
+   const imagePath = '/src/lib/assets/image 1.png';
   </script>
   
   <style>
