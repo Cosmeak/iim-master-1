@@ -18,6 +18,11 @@
     init(); 
   });
 
+  onDestroy(() => {
+    chart?.destroy();
+    chart = undefined;
+  });
+
   // Functions
   function init() {
     const chartOptions = {
