@@ -55,7 +55,7 @@
 
 
 
-<footer class="my-4">
+<footer class="py-4">
   <div class="Page">
     <h1 class="issy">Issy-les-Moulineaux</h1>
 
