@@ -1,6 +1,6 @@
 
 <script>
-   const imagePath = '/src/lib/assets/image 1.png';
+   
    import Button from './Ibutton.svelte'; 
   </script>
   
@@ -31,7 +31,7 @@
   <header>
     
     <nav>
-        <img src={imagePath} alt="ISSY" />
+        <img src={"./assets/image 1.png"} alt="ISSY" />
       <a href="/">Accueil</a>
       <a href="/donnees">Données</a>
       <a href="/actualites">Actualités</a>

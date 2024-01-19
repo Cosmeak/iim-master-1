@@ -2,10 +2,6 @@
 
 <script>
   
-  const imagePath = '/src/lib/assets/youtube-logo.png';
-  const imagePath1 = '/src/lib/assets/instagram-logo.png';
-  const imagePath2 = '/src/lib/assets/linkedin-logo.png';
-  const imagePath3 = '/src/lib/assets/facebook-logo.png';
 
   
   </script>
@@ -24,6 +20,7 @@
         margin: 47px;
         margin-bottom: 5%;
         margin-left: 15%;
+        align-items: center;
      
     }
   
@@ -110,20 +107,20 @@
   </div> 
 
 
-  <div  class="flex ml-28 px-28 gap-96"> 
+  <div  class="flex ml-28 px-28 gap-96 items-center"> 
 
     <nav  class="flex space-x-4 gap-24"> 
         <div>
-            <img src={imagePath} alt="youtube" />
+            <img src={"./assets/youtube-logo.png"} alt="youtube" />
         </div>
         <div>
-            <img src={imagePath1} alt="instagram" />
+            <img src={"./assets/instagram-logo.png"} alt="instagram" />
         </div>
         <div>
-            <img src={imagePath2} alt="linkdin" />
+            <img src={"./assets/linkedin-logo.png"} alt="linkdin" />
         </div>
         <div >
-            <img src={imagePath3} alt="facebook" />
+            <img src={"./assets/facebook-logo.png"} alt="facebook" />
         </div>
     </nav>
       
