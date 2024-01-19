@@ -1,5 +1,4 @@
 <script lang="ts">
-export let text: string = "Button";
 export let color: string = "green";
 
 const colors = {
@@ -16,6 +15,6 @@ const colors = {
 <button 
 	type={$$props.type}
 	class={$$props.class + ` shadow-sm px-4 py-1 rounded duration-200 ` + colors[color] }
->
-	{text}
+>	
+	<slot />
 </button>

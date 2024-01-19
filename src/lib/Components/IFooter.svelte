@@ -2,10 +2,6 @@
 
 <script>
   
-  const imagePath = '/src/img/youtube-logo.png';
-  const imagePath1 = '/src/img/instagram-logo.png';
-  const imagePath2 = '/src/img/linkedin-logo.png';
-  const imagePath3 = '/src/img/facebook-logo.png';
 
   
   </script>
@@ -19,10 +15,13 @@
 
     
     .Page { 
-        gap: 70%;
+        gap: 55%;
         display: flex;
         margin: 47px;
         margin-bottom: 5%;
+        margin-left: 15%;
+        align-items: center;
+     
     }
   
 
@@ -64,11 +63,12 @@
  
   
   </div>
+
   <div class="mb-12 px-60">
     <h2 >Accéder au centre d'aide</h2>
   </div>
 
-  <div class="flex space-x-4 gap-14" > 
+  <div class="flex gap-14" > 
 
    <div class="mb-12 px-60"> 
     <h1> Mairie </h1>
@@ -83,7 +83,9 @@
     </ul>
 
    </div> 
+ 
 
+   <div class="gap-80 flex"> 
    <div > 
     <h1> Date </h1>
     <ul>
@@ -101,26 +103,26 @@
        
     </ul>
    </div>
-
+  </div>
   </div> 
 
 
-  <div  class="flex space-x-4 mb-12  px-28 gap-96"> 
+  <div  class="flex ml-28 px-28 gap-96 items-center"> 
 
-    <div  class="flex space-x-4 gap-24"> 
+    <nav  class="flex space-x-4 gap-24"> 
         <div>
-            <img src={imagePath} alt="youtube" />
+            <img src={"./assets/youtube-logo.png"} alt="youtube" />
         </div>
         <div>
-            <img src={imagePath1} alt="instagram" />
+            <img src={"./assets/instagram-logo.png"} alt="instagram" />
         </div>
         <div>
-            <img src={imagePath2} alt="linkdin" />
+            <img src={"./assets/linkedin-logo.png"} alt="linkdin" />
         </div>
         <div >
-            <img src={imagePath3} alt="facebook" />
+            <img src={"./assets/facebook-logo.png"} alt="facebook" />
         </div>
-    </div>
+    </nav>
       
       
       

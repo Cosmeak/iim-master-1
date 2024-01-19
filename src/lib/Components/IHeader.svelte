@@ -1,6 +1,7 @@
 
 <script>
-   const imagePath = '/src/img/image 1.png';
+   
+   import Button from './Ibutton.svelte'; 
   </script>
   
   <style>
@@ -16,7 +17,8 @@
     nav {
       display: flex;
       justify-content: space-around;
-      margin-top: 10px;
+      margin-top: 10px; 
+      align-items: center;
     }
   
     a {
@@ -29,13 +31,18 @@
   <header>
     
     <nav>
-        <img src={imagePath} alt="ISSY" />
+        <img src={"./assets/image 1.png"} alt="ISSY" />
       <a href="/">Accueil</a>
       <a href="/donnees">Données</a>
       <a href="/actualites">Actualités</a>
       <a href="/outils">Outils</a>
-      <a href="/contact">Contact</a>
+      <a href="/contact">Contact</a>  
+      <div>
+      <Button color="white">Connexion</Button>
+      <Button color="green">Inscription</Button>
+    </div>
     </nav>
+   
   
   </header>
   
