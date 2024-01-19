@@ -19,10 +19,12 @@
 
     
     .Page { 
-        gap: 70%;
+        gap: 55%;
         display: flex;
         margin: 47px;
         margin-bottom: 5%;
+        margin-left: 15%;
+     
     }
   
 
@@ -55,7 +57,7 @@
 
 
 
-<footer class="my-4">
+<footer class="py-4">
   <div class="Page">
     <h1 class="issy">Issy-les-Moulineaux</h1>
 
@@ -84,7 +86,9 @@
     </ul>
 
    </div> 
+ 
 
+   <div class="gap-80 flex"> 
    <div > 
     <h1> Date </h1>
     <ul>
@@ -102,11 +106,11 @@
        
     </ul>
    </div>
-
+  </div>
   </div> 
 
 
-  <div  class="flex  mb-12  px-28 gap-96"> 
+  <div  class="flex ml-28 px-28 gap-96"> 
 
     <nav  class="flex space-x-4 gap-24"> 
         <div>
