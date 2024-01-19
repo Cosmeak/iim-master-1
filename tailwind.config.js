@@ -15,23 +15,23 @@ export default {
 			},
 			lightgray: {
 				DEFAULT: '#F8F8F8',
-				dark: '',
-				light: '',
+				dark: '#6A6A6A',
+				light: ''
 			},
 			blue: {
-				DEFAULT: '#43ACDF', 
-				dark: '#2541B2',
-				light: '',
+				DEFAULT: '#43ACDF',
+				dark: '#04437C',
+				light: '#ebf3fe'
 			},
 			yellow: {
 				DEFAULT: '#F9DB6D',
 				dark: '#F9DB6D',
-				light: '',
+				light: ''
 			},
 			green: {
 				DEFAULT: '#73AB84',
 				dark: '#5B9C6F',
-				light: '',
+				light: ''
 			},
 			red: {
 				DEFAULT: '#FF3A3A',
@@ -39,7 +39,17 @@ export default {
 				light: ''
 			}
 		},
-		extend: {}
+		extend: {
+			height: {
+				section: 'calc(100vh - 90px)'
+			},
+			borderRadius: {
+				'4xl': '2rem'
+			},
+			backgroundImage: (theme) => ({
+				hero: "url('./assets/bgImmeuble.png')"
+			})
+		}
 	},
 	plugins: []
 };
