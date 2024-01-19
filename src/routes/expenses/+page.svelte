@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <p class="text-2xl text-blue-dark">
+    <p class=" text-blue-dark text-lg text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium blandit consectetur. Fusce sed accumsan metus, vitae fringilla augue. Duis tristique ligula vitae ante lacinia porta. Aliquam volutpat at nulla ut posuere. Vivamus semper eros et mauris tempor, vel pretium mauris commodo. Sed luctus sem lacus, a feugiat massa tempus ac. Pellentesque tempus felis eu nisl condimentum, eget ornare mauris bibendum. Maecenas cursus dui id cursus gravida. Donec ante ex, vulputate a nunc vitae, sagittis ornare turpis. Donec viverra purus sed feugiat ornare. Duis id metus id quam rutrum laoreet eu at est.
     </p>
   </div>
@@ -45,8 +45,8 @@
   <img src="/assets/expenses-hero.svg" class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12" alt="">
 </section>
 
-<section class="p-8">
-  <div class="p-4 border-2 border-lightgray rounded-lg">
+<section class="p-4">
+  <div class="p-4 border-2 border-lightgray rounded-lg w-11/12 ml-20">
     <ApexCharts 
       series={chartSeries} 
       options={chartOptions}
@@ -57,7 +57,7 @@
 
 <section class="text-blue-dark p-24 flex gap-8">
   <div>
-    <h2 class="text-3xl font-bold">Services utilisés</h2>
+    <h2 class="text-3xl font-bold ">Services utilisés</h2>
     <p class="pt-8 text-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium blandit consectetur. Fusce sed accumsan metus, vitae fringilla augue. Duis tristique ligula vitae ante lacinia porta. Aliquam volutpat at nulla ut posuere. Vivamus semper eros et mauris tempor, vel pretium mauris commodo. Sed luctus sem lacus, a feugiat massa tempus ac
     </p>

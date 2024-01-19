@@ -2,8 +2,6 @@
 
 <script>
   
-
-  
   </script>
   
   <style>
@@ -117,7 +115,7 @@
             <img src={"./assets/instagram-logo.png"} alt="instagram" />
         </div>
         <div>
-            <img src={"./assets/linkedin-logo.png"} alt="linkdin" />
+            <img src= {"./assets/linkedin-logo.png"} alt="linkdin" />
         </div>
         <div >
             <img src={"./assets/facebook-logo.png"} alt="facebook" />
