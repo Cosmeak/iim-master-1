@@ -12,7 +12,7 @@
   };
   const chartSeries: Array<any> = [{
     serie: 'Dépenses par année',
-    data: [50000,52000,54000,58000,61000,63000,67000,70000,74000,77000,79000,81000,85000,89000,95000,101000,110000],
+    data: [52000,54000,58000,61000,63000,67000,70000,74000,77000,79000,81000,85000,89000,95000,101000,110000],
   }]
 </script>
 
@@ -42,7 +42,7 @@
     </p>
   </div>
   
-  <img src="/assets/expenses-hero.svg" class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12" alt="">
+  <img src="./assets/expenses-hero.svg" class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12" alt="">
 </section>
 
 <section class="p-8">
@@ -67,5 +67,5 @@
     </p>
   </div>
 
-  <img src="/assets/expenses-services.svg" alt="">
+  <img src="./assets/expenses-services.svg" alt="">
 </section>
