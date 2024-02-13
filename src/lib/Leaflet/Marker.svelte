@@ -37,5 +37,5 @@
 </script>
 
 <div bind:this={container}>
-  <slot />
+	<slot />
 </div>
