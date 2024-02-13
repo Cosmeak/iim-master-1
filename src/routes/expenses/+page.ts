@@ -11,7 +11,6 @@ export const load: PageLoad = async ({ fetch }) => {
 		);
 
 		const json = await response.json();
-		console.log(json);
 		totalCount = json.total_count;
 		data = data.concat(json.results);
 		offset = data.length;
