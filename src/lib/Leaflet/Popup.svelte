@@ -28,6 +28,8 @@
 	});
 </script>
 
-<div>
-	<slot />
+<div bind:this={container}>
+	{#if popup}
+		<slot />
+	{/if}
 </div>

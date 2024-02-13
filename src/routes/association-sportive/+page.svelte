@@ -1,16 +1,24 @@
 <script lang="ts">
 	import Map from '$lib/Leaflet/Map.svelte';
+	import Marker from '$lib/Leaflet/Marker.svelte';
+	import Popup from '$lib/Leaflet/Popup.svelte';
 	import type { LatLngExpression } from 'leaflet';
 
-	const initialView: LatLngExpression = [48.890577, 2.241656];
-	const initialZoom: number = 13;
+	export let data;
+
+	const initialView: LatLngExpression = [48.816669, 2.26667];
+	const initialZoom: number = 14;
 </script>
+
+<svelte:head>
+	<title>Associations Sportives</title>
+</svelte:head>
 
 <section
 	class="max-w-screen-2xl mx-auto w-screen h-section bg-hero bg-no-repeat bg-contain bg-bottom bg-blue-light relative flex flex-col items-center justify-center space-y-8"
 >
 	<img src="/assets/space.svg" alt="" class="absolute top-0 left-0 max-h-4xl" />
-	<h1 class="text-blue-dark text-6xl text-center">Association Sportive</h1>
+	<h1 class="text-blue-dark text-6xl text-center">Associations Sportives</h1>
 
 	<div class="grid grid-cols-5 gap-4 w-full max-w-6xl">
 		<div
@@ -87,8 +95,19 @@
 		<div class="w-fit border-b-4 border-blue-dark">
 			<h2 class="text-blue-dark text-2xl">Ou trouver nos associations sportives ?</h2>
 		</div>
-		<div class="w-full h-96">
-			<Map view={initialView} zoom={initialZoom} />
+		<div class="w-full h-[600px]">
+			<Map view={initialView} zoom={initialZoom}>
+				{#each data.data as asso}
+					{#if asso.localisation}
+						<Marker latLng={[asso.localisation.lat, asso.localisation.lon]} width={40} height={40}>
+							<Popup>
+								<h2 class="pb-2">{asso.nom_association}</h2>
+								<p>{asso.description}</p>
+							</Popup>
+						</Marker>
+					{/if}
+				{/each}
+			</Map>
 		</div>
 		<div class="w-full">
 			<h2 class="text-blue-dark text-2xl">Infos complémentaires</h2>
