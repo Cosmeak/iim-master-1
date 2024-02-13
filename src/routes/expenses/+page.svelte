@@ -9,16 +9,30 @@
 		'depenses_reelles_services_population'
 	);
 
-	console.log(groupedData);
+	const years = [...new Set(data.data.map((item) => item.exercice))];
 
-	console.log(data);
+	const lastThreeYearsTotal = Object.values(
+		groupBy(
+			data.data.filter((item) => years.slice(0, 3).includes(item.exercice)),
+			'exercice'
+		)
+	).map((item) => {
+		return {
+			year: item[0].exercice,
+			total: item.reduce(
+				(accumulator, value) =>
+					(typeof accumulator == 'object' ? parseFloat(accumulator.montant_en_euros) : 0.0) +
+					parseFloat(value.montant_en_euros)
+			)
+		};
+	});
 
 	const chartOptions = {
 		chart: {
 			toolbar: { show: false }
 		},
 		xaxis: {
-			categories: [...new Set(data.data.map((item) => item.exercice))].reverse()
+			categories: years.reverse()
 		}
 	};
 
@@ -45,27 +59,19 @@
 			Dépenses de fonctionnement d'Issy-les-Moulineaux par types de services à la population
 		</h2>
 
-		<div class="flex justify-between">
-			<div class="px-12 py-16 rounded-lg text-white bg-[#8BCBEA] text-5xl text-center">
-				<p>En 2021</p>
-				<p class="pt-8">31M €</p>
-			</div>
-
-			<div class="px-12 py-16 rounded-lg text-white bg-blue text-5xl text-center">
-				<p>En 2022</p>
-				<p class="pt-8">31M €</p>
-			</div>
-
-			<div class="px-12 py-16 rounded-lg text-white bg-blue-dark text-5xl text-center">
-				<p>En 2023</p>
-				<p class="pt-8">31M €</p>
-			</div>
+		<div class="flex justify-between gap-6">
+			{#each lastThreeYearsTotal as year}
+				<div class="px-12 py-16 rounded-lg text-white bg-[#8BCBEA] text-5xl text-center">
+					<p>En {year.year}</p>
+					<p class="pt-8">{year.total} €</p>
+				</div>
+			{/each}
 		</div>
 
 		<p class="text-2xl text-blue-dark">
 			Explorez les détails financiers avec une perspective approfondie sur la répartition des
 			dépenses de fonctionnement d’Issy-les-Moulineaux avec le Fonds de Solidarité des communes de
-			la Région Île-de-France (FSRIF) sur la période allant de 2008 à 2020. Vous pouvez avoir un
+			la Région Île-de-France (FSRIF) sur la période allant de 2008 à 2022. Vous pouvez avoir un
 			détail des dépenses en fonction de leur type afin de comprendre les tendances, les évolutions
 			et les dynamiques budgétaires au fil du temps.
 		</p>
