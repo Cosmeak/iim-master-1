@@ -66,9 +66,11 @@
     <h2 >Accéder au centre d'aide</h2>
   </div>
 
-  <div class="flex gap-14" > 
 
-   <div class="mb-12 px-60"> 
+
+
+  <div class="flex  px-60  gap-40 " >  
+   <div class="mb-12"> 
     <h1> Mairie </h1>
     <ul >
         <li>À propos </li>
@@ -83,18 +85,31 @@
    </div> 
  
 
-   <div class="gap-80 flex"> 
+  
    <div > 
-    <h1> Date </h1>
+    <h1> Data </h1>
     <ul>
         <li>Acceuil </li>
         <li>API</li>
        
     </ul>
    </div>
-
    <div> 
-    <h1> Déplacment  </h1>
+    <h1>Sécurité</h1>
+    <ul> 
+      <li>
+        Conditions Générales
+      </li>
+      <li>
+        Diversité et intégration
+      </li>
+      <li> 
+        Développement durable
+      </li>
+    </ul>
+ </div>
+   <div> 
+    <h1> Déplacement  </h1>
     <ul>
         <li>Covoiturage  </li>
         <li>Velib </li>
@@ -102,7 +117,7 @@
     </ul>
    </div>
   </div>
-  </div> 
+
 
 
   <div  class="flex ml-28 px-28 gap-96 items-center"> 

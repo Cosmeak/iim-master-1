@@ -1,5 +1,6 @@
 <script lang="ts">
   import ApexCharts from "$lib/ApexCharts.svelte";
+	import ISearch from "$lib/Components/ISearch.svelte";
 
   const chartOptions = {
     legend: { show: false },
@@ -67,5 +68,6 @@
     </p>
   </div>
 
-  <img src="/assets/expenses-services.svg" alt="">
+  <img src="/assets/expenses-services.svg" alt=""> 
+
 </section>
