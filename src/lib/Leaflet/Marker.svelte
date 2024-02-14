@@ -22,7 +22,7 @@
 		if (map) {
 			// const icon = Leaflet.divIcon({
 			// 	html: container,
-			// 	className: 'map-marker',
+			// 	className: 'fa-solid fa-location-pin',
 			// 	iconSize: Leaflet.point(width, height)
 			// });
 			// marker = Leaflet.marker(latLng, { icon }).addTo(map);

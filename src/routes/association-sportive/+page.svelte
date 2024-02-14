@@ -32,7 +32,7 @@
 </svelte:head>
 
 <section
-	class="max-w-screen-2xl mx-auto w-screen h-section bg-hero bg-no-repeat bg-contain bg-bottom bg-blue-light relative flex flex-col items-center justify-center space-y-8"
+	class="w-screen h-section bg-hero bg-no-repeat bg-contain bg-bottom bg-blue-light relative flex flex-col items-center justify-center space-y-8"
 >
 	<img src="/assets/space.svg" alt="" class="absolute top-0 left-0 max-h-4xl" />
 	<h1 class="text-blue-dark text-6xl text-center">Associations Sportives</h1>
@@ -70,7 +70,7 @@
 		</div>
 	</div>
 
-	<p class="text-center max-w-4xl text-lightgray-dark">
+	<p class="text-center max-w-4xl text-lightgray-dark font-semibold">
 		Bienvenue sur le site de l'Association Sportive d'Issy-les-Moulineaux, votre référence en
 		matière de dynamisme et d'esprit sportif au cœur de notre ville. Dédiée à la promotion du sport
 		et au bien-être de nos citoyens, notre association s'engage à offrir une expérience sportive
@@ -112,14 +112,18 @@
 		<div class="w-fit border-b-4 border-blue-dark">
 			<h2 class="text-blue-dark text-2xl">Ou trouver nos associations sportives ?</h2>
 		</div>
-		<div class="w-full h-[800px] pt-4 pb-12">
+		<div class="w-full h-[800px] mt-4 mb-6">
 			<Map view={initialView} zoom={initialZoom}>
 				{#each data.data as asso}
 					{#if asso.localisation}
 						<Marker latLng={[asso.localisation.lat, asso.localisation.lon]} width={40} height={40}>
 							<Popup>
-								<h2 class="pb-2">{asso.nom_association}</h2>
-								<p>{asso.description}</p>
+								<h2 class="text-lg">{asso.nom_association}</h2>
+								<div class="flex flex-col gap-1 mt-1">
+									<span><i class="fa-solid fa-location-pin mr-1" /> {asso.adresse}</span>
+									<span><i class="fa-solid fa-envelope mr-1" /> {asso.email}</span>
+									<span><i class="fa-solid fa-phone mr-1" /> {asso.telephone}</span>
+								</div>
 							</Popup>
 						</Marker>
 					{/if}
