@@ -6,6 +6,23 @@
 
 	export let data;
 
+	let globalData = {
+		childs: 0,
+		youngs: 0,
+		adults: 0,
+		seniors: 0,
+		handicaps: 0,
+		total: data.data.length
+	};
+
+	data.data.forEach((item) => {
+		if (item.enfants == 'Oui') globalData.childs += 1;
+		if (item.jeunes == 'Oui') globalData.youngs += 1;
+		if (item.adultes == 'Oui') globalData.adults += 1;
+		if (item.seniors == 'Oui') globalData.seniors += 1;
+		if (item.sport_handicap == 'Oui') globalData.handicaps += 1;
+	});
+
 	const initialView: LatLngExpression = [48.816669, 2.26667];
 	const initialZoom: number = 14;
 </script>
@@ -25,31 +42,31 @@
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tl-4xl rounded-br-4xl aspect-square mt-20"
 		>
 			<p class="text-3xl">Enfants</p>
-			<p class="text-4xl">3 800</p>
+			<p class="text-4xl">{globalData.childs}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tl-4xl rounded-br-4xl aspect-square mt-10"
 		>
 			<p class="text-3xl">Jeunes</p>
-			<p class="text-4xl">4 700</p>
+			<p class="text-4xl">{globalData.youngs}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-4xl aspect-square"
 		>
 			<p class="text-3xl">Total</p>
-			<p class="text-4xl">20 100</p>
+			<p class="text-4xl">{globalData.total}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tr-4xl rounded-bl-4xl aspect-square mt-10"
 		>
 			<p class="text-3xl">Seniors</p>
-			<p class="text-4xl">2 300</p>
+			<p class="text-4xl">{globalData.seniors}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tr-4xl rounded-bl-4xl aspect-square mt-20"
 		>
 			<p class="text-3xl">Handicapés</p>
-			<p class="text-4xl">850</p>
+			<p class="text-4xl">{globalData.handicaps}</p>
 		</div>
 	</div>
 
@@ -89,13 +106,13 @@
 </section>
 
 <section
-	class="max-w-screen-2xl mx-auto w-screen h-section relative justify-center flex flex-col space-y-8"
+	class="max-w-screen-2xl mx-auto w-screen min-h-section relative justify-center flex flex-col space-y-8 my-8"
 >
 	<div class="w-full px-32">
 		<div class="w-fit border-b-4 border-blue-dark">
 			<h2 class="text-blue-dark text-2xl">Ou trouver nos associations sportives ?</h2>
 		</div>
-		<div class="w-full h-[600px]">
+		<div class="w-full h-[800px] pt-4 pb-12">
 			<Map view={initialView} zoom={initialZoom}>
 				{#each data.data as asso}
 					{#if asso.localisation}
@@ -110,19 +127,19 @@
 			</Map>
 		</div>
 		<div class="w-full">
-			<h2 class="text-blue-dark text-2xl">Infos complémentaires</h2>
-			<div class="flex">
-				<div class="w-6/12">
+			<h2 class="text-blue-dark text-2xl mb-2 font-bold">Infos complémentaires</h2>
+			<div class="flex gap-8">
+				<div class="w-8/12 p-6 border-blue-dark border-t border-b">
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, magni? Nisi, ullam! Cum
-						amet, officia voluptas accusamus, nisi ab aut placeat animi odio, aspernatur sit dolor.
-						Nulla consectetur aspernatur laboriosam?
+						Sportium Urbis, l'association sportive dynamique de notre ville, offre une variété
+						d'activités sportives adaptées à tous les niveaux et âges. Que vous soyez un passionné
+						de football, un adepte de la course à pied ou un amateur de sports d'équipe, notre
+						association vous accueille avec enthousiasme. Les membres bénéficient d'un accès
+						exclusif à nos installations de pointe, ainsi que de programmes d'entraînement
+						personnalisés dispensés par des coachs expérimentés.
 					</p>
 				</div>
-				<a
-					href="/"
-					class="w-4/12 flex items-center justify-between space-x-4 p-2 bg-blue-dark min-w-48 max-h-fit"
-				>
+				<a href="/" class="flex items-center gap-20 p-2 bg-blue-dark min-w-48 h-fit self-end">
 					<p class="text-white">Contacer</p>
 					<svg
 						width="15"
