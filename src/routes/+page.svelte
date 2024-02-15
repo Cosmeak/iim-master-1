@@ -2,6 +2,7 @@
 	import type { LatLngExpression } from 'leaflet';
 	import Map from '$lib/Leaflet/Map.svelte';
 	import Polygon from '$lib/Leaflet/Vectors/Polygon.svelte';
+	import Circle from '$lib/Leaflet/Vectors/Circle.svelte';
 
 	const initialView: LatLngExpression = [48.890577, 2.241656];
 	const initialZoom: number = 13;
@@ -9,6 +10,7 @@
 
 <div class="w-full h-screen">
 	<Map view={initialView} zoom={initialZoom}>
+		<Circle latLng={[48.890577, 2.241656]} radius={2000} />
 		<Polygon
 			latLngList={[
 				[
