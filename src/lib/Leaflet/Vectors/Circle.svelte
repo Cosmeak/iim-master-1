@@ -2,9 +2,10 @@
 	import { onMount, onDestroy, getContext, setContext } from 'svelte';
 	import Leaflet from 'leaflet';
 
-	export let latLngList: Array<Leaflet.LatLngExpression>;
+	export let latLng: Leaflet.LatLngExpression;
+	export let radius: number;
 
-	let polygon: Leaflet.Polygon | undefined;
+	let circle: Leaflet.Circle | undefined;
 	let container: HTMLElement;
 
 	// Get map from parent
@@ -12,23 +13,23 @@
 	const map = getMap();
 
 	setContext('layer', {
-		getLayer: () => polygon
+		getLayer: () => circle
 	});
 
 	onMount(() => {
 		if (map) {
-			polygon = Leaflet.polygon(latLngList).addTo(map);
+			circle = Leaflet.circle(latLng, { radius }).addTo(map);
 		}
 	});
 
 	onDestroy(() => {
-		polygon?.remove();
-		polygon = undefined;
+		circle?.remove();
+		circle = undefined;
 	});
 </script>
 
 <div bind:this={container}>
-	{#if polygon}
+	{#if circle}
 		<slot />
 	{/if}
 </div>
