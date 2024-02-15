@@ -17,6 +17,16 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions.add("environment")
+
+    productFlavors {
+        create("dev") {
+            dimension = "environment"
+            buildConfigField("String", "API_KEY", "\"4a26edb247318e9bf909f94b92a4ee82\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -25,6 +35,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.9"

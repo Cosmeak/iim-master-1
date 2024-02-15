@@ -1,4 +1,14 @@
 package com.example.android_kotlin.model.interfaces
 
-class TMdbInterface {
+import com.example.android_kotlin.model.MovieResponse
+import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Query
+
+interface ApiService {
+    @GET("movie/popular")
+    suspend fun getPopularMovies(
+        @Query("api_key") apiKey: String,
+        @Query("page") page: Int
+    ): Response<MovieResponse>
 }
