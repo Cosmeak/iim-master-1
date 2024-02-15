@@ -4,7 +4,7 @@ data class Movie(
     val id: Int,
     val title: String,
     val overview: String,
-    val posterPath: String
+    val poster_path: String
 )
 
 data class MovieResponse(
