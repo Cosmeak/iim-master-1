@@ -33,6 +33,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     buildFeatures {
         compose = true
         buildConfig = true
@@ -57,6 +58,8 @@ dependencies {
     // ViewModel utilities for Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
     implementation("androidx.fragment:fragment-ktx:$fragments_version")
+    // Coil
+    implementation("io.coil-kt:coil:1.1.1")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.core:core-ktx:1.12.0")

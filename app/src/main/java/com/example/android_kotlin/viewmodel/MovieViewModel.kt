@@ -16,6 +16,8 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> get() = _movies
+    private val _selectedMovie = MutableLiveData<Movie>()
+    val selectedMovie: LiveData<Movie> get() = _selectedMovie
 
     init {
         viewModelScope.launch {
@@ -27,6 +29,19 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         val response = repository.getPopularMovies(apiKey, currentPage)
         if (response.isSuccessful) {
             _movies.postValue(response.body()?.results)
+        } else {
+            // error
+        }
+    }
+
+    fun setSelectedMovie(movie: Movie) {
+        _selectedMovie.value = movie
+    }
+
+    suspend fun fetchMovieById(movieId: Int) {
+        val response = repository.getMovieById(movieId, apiKey)
+        if (response.isSuccessful) {
+            _selectedMovie.postValue(response.body())
         } else {
             // error
         }
