@@ -20,7 +20,6 @@
 
 	onMount(() => {
 		if (map) {
-			console.log(map);
 			polygon = Leaflet.polygon(latLngList).addTo(map);
 		}
 	});
