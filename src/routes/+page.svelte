@@ -93,7 +93,7 @@
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
 					<a
-						href="/associations-sportives"
+						href="/association-sportive"
 						class="underline text-blue-dark absolute bottom-4 right-4"
 					>
 						En savoir plus

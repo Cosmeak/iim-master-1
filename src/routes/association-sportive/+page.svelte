@@ -108,7 +108,7 @@
 <section
 	class="max-w-screen-2xl mx-auto w-screen min-h-section relative justify-center flex flex-col space-y-8 my-8"
 >
-	<div class="w-full px-32">
+	<div class="w-full px-32 space-y-8">
 		<div class="w-fit border-b-4 border-blue-dark">
 			<h2 class="text-blue-dark text-2xl">Ou trouver nos associations sportives ?</h2>
 		</div>
@@ -131,16 +131,43 @@
 			</Map>
 		</div>
 		<div class="w-full">
-			<h2 class="text-blue-dark text-2xl mb-2 font-bold">Infos complémentaires</h2>
-			<div class="flex gap-8">
-				<div class="w-8/12 p-6 border-blue-dark border-t border-b">
-					<p>
-						Sportium Urbis, l'association sportive dynamique de notre ville, offre une variété
-						d'activités sportives adaptées à tous les niveaux et âges. Que vous soyez un passionné
-						de football, un adepte de la course à pied ou un amateur de sports d'équipe, notre
-						association vous accueille avec enthousiasme. Les membres bénéficient d'un accès
-						exclusif à nos installations de pointe, ainsi que de programmes d'entraînement
-						personnalisés dispensés par des coachs expérimentés.
+			<h2 class="text-blue-dark text-2xl font-bold">Infos complémentaires</h2>
+			<div class="flex items-end w-full">
+				<div class="w-full relative hoverShow">
+					<div
+						class="hoverElement hidden absolute w-full h-full z-10 bg-[#ffffffe6] items-center justify-center"
+					>
+						<a href="/" class="border border-blue-dark p-2 flex items-center space-x-4 bg-white">
+							<p class="text-blue-dark">Voir images</p>
+							<svg
+								width="15"
+								height="14"
+								viewBox="0 0 15 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M1 11.4V4.9C1 4.18203 1.58203 3.6 2.3 3.6H2.625C3.03418 3.6 3.41949 3.40735 3.665 3.08L5.108 1.156C5.18165 1.0578 5.29725 1 5.42 1H9.58C9.70278 1 9.81835 1.0578 9.892 1.156L11.335 3.08C11.5805 3.40735 11.9658 3.6 12.375 3.6H12.7C13.418 3.6 14 4.18203 14 4.9V11.4C14 12.118 13.418 12.7 12.7 12.7H2.3C1.58203 12.7 1 12.118 1 11.4Z"
+									stroke="#04437C"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M7.50002 10.1C8.93594 10.1 10.1 8.93594 10.1 7.50002C10.1 6.06411 8.93594 4.90002 7.50002 4.90002C6.06408 4.90002 4.90002 6.06411 4.90002 7.50002C4.90002 8.93594 6.06408 10.1 7.50002 10.1Z"
+									stroke="#04437C"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</a>
+					</div>
+					<div class="absolute border-y border-blue-dark w-full h-full"></div>
+					<div class="absolute border-half-left w-full h-full"></div>
+					<div class="absolute border-half-right w-full h-full"></div>
+					<p class="p-8 font-bold">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, magni? Nisi, ullam! Cum
+						amet, officia voluptas accusamus, nisi ab aut placeat animi odio, aspernatur sit dolor.
+						Nulla consectetur aspernatur laboriosam?
 					</p>
 				</div>
 				<a href="/" class="flex items-center gap-20 p-2 bg-blue-dark min-w-48 h-fit self-end">
@@ -159,3 +186,31 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.border-half-left:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 50%;
+		max-height: 50px;
+		width: 1px;
+		border-left: 1px solid #04437c;
+	}
+	.border-half-right:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 50%;
+		max-height: 50px;
+		width: 1px;
+		border-right: 1px solid #04437c;
+	}
+
+	.hoverShow:hover .hoverElement {
+		display: flex;
+		transition: all .5s ease-in-out;
+	}
+</style>

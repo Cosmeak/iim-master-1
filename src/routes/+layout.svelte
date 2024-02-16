@@ -4,7 +4,7 @@
 	import Footer from '$lib/Components/IFooter.svelte';
 </script>
 
-<main>
+<main class="max-w-screen-2xl mx-auto">
 	<Header />
 	<slot />
 	<Footer />
