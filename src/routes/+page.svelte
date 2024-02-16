@@ -52,7 +52,7 @@
 		<div class="grid gap-8 grid-cols-4 grid-rows-2 mt-8">
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div class="w-full">
-					<img src="./assets/home/expenses.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/expenses.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Dépenses de la ville</h4>
@@ -68,7 +68,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/enfances.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/enfances.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Structure petite enfance</h4>
@@ -84,7 +84,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/sports.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/sports.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Associations sportives</h4>
@@ -103,7 +103,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/encombrants.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/encombrants.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Collecte d’encombrants</h4>
@@ -119,7 +119,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/climat.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/climat.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Tableau de bord climatique</h4>
@@ -133,7 +133,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/commerces.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/commerces.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Commerces à proximité</h4>
@@ -149,7 +149,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/deliberation.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/deliberation.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Déliberations</h4>
@@ -163,7 +163,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="./assets/home/financial-report.png" alt="" class="object-cover w-full" />
+					<img src="/assets/home/financial-report.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Rapport financier</h4>
