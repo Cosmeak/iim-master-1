@@ -52,5 +52,7 @@
 
 <!-- Rendering container -->
 <div class="w-full h-full" bind:this={container}>
-	<slot />
+	{#if map}
+		<slot />
+	{/if}
 </div>

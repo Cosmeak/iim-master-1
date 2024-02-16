@@ -1,51 +1,76 @@
 <script lang="ts">
 	import Map from '$lib/Leaflet/Map.svelte';
+	import Marker from '$lib/Leaflet/Marker.svelte';
+	import Popup from '$lib/Leaflet/Popup.svelte';
 	import type { LatLngExpression } from 'leaflet';
 
-	const initialView: LatLngExpression = [48.890577, 2.241656];
-	const initialZoom: number = 13;
+	export let data;
+
+	let globalData = {
+		childs: 0,
+		youngs: 0,
+		adults: 0,
+		seniors: 0,
+		handicaps: 0,
+		total: data.data.length
+	};
+
+	data.data.forEach((item) => {
+		if (item.enfants == 'Oui') globalData.childs += 1;
+		if (item.jeunes == 'Oui') globalData.youngs += 1;
+		if (item.adultes == 'Oui') globalData.adults += 1;
+		if (item.seniors == 'Oui') globalData.seniors += 1;
+		if (item.sport_handicap == 'Oui') globalData.handicaps += 1;
+	});
+
+	const initialView: LatLngExpression = [48.816669, 2.26667];
+	const initialZoom: number = 14;
 </script>
 
+<svelte:head>
+	<title>Associations Sportives</title>
+</svelte:head>
+
 <section
-	class="max-w-screen-2xl mx-auto w-screen h-section bg-hero bg-no-repeat bg-contain bg-bottom bg-blue-light relative flex flex-col items-center justify-center space-y-8"
+	class="w-screen h-section bg-hero bg-no-repeat bg-contain bg-bottom bg-blue-light relative flex flex-col items-center justify-center space-y-8"
 >
 	<img src="/assets/space.svg" alt="" class="absolute top-0 left-0 max-h-4xl" />
-	<h1 class="text-blue-dark text-6xl text-center">Association Sportive</h1>
+	<h1 class="text-blue-dark text-6xl text-center">Associations Sportives</h1>
 
 	<div class="grid grid-cols-5 gap-4 w-full max-w-6xl">
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tl-4xl rounded-br-4xl aspect-square mt-20"
 		>
 			<p class="text-3xl">Enfants</p>
-			<p class="text-4xl">3 800</p>
+			<p class="text-4xl">{globalData.childs}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tl-4xl rounded-br-4xl aspect-square mt-10"
 		>
 			<p class="text-3xl">Jeunes</p>
-			<p class="text-4xl">4 700</p>
+			<p class="text-4xl">{globalData.youngs}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-4xl aspect-square"
 		>
 			<p class="text-3xl">Total</p>
-			<p class="text-4xl">20 100</p>
+			<p class="text-4xl">{globalData.total}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tr-4xl rounded-bl-4xl aspect-square mt-10"
 		>
 			<p class="text-3xl">Seniors</p>
-			<p class="text-4xl">2 300</p>
+			<p class="text-4xl">{globalData.seniors}</p>
 		</div>
 		<div
 			class="flex flex-col items-center justify-center bg-blue-dark text-white p-12 space-y-8 rounded-tr-4xl rounded-bl-4xl aspect-square mt-20"
 		>
 			<p class="text-3xl">Handicapés</p>
-			<p class="text-4xl">850</p>
+			<p class="text-4xl">{globalData.handicaps}</p>
 		</div>
 	</div>
 
-	<p class="text-center max-w-4xl text-lightgray-dark">
+	<p class="text-center max-w-4xl text-lightgray-dark font-semibold">
 		Bienvenue sur le site de l'Association Sportive d'Issy-les-Moulineaux, votre référence en
 		matière de dynamisme et d'esprit sportif au cœur de notre ville. Dédiée à la promotion du sport
 		et au bien-être de nos citoyens, notre association s'engage à offrir une expérience sportive
@@ -81,29 +106,44 @@
 </section>
 
 <section
-	class="max-w-screen-2xl mx-auto w-screen h-section relative justify-center flex flex-col space-y-8"
+	class="max-w-screen-2xl mx-auto w-screen min-h-section relative justify-center flex flex-col space-y-8 my-8"
 >
 	<div class="w-full px-32">
 		<div class="w-fit border-b-4 border-blue-dark">
 			<h2 class="text-blue-dark text-2xl">Ou trouver nos associations sportives ?</h2>
 		</div>
-		<div class="w-full h-96">
-			<Map view={initialView} zoom={initialZoom} />
+		<div class="w-full h-[800px] mt-4 mb-6">
+			<Map view={initialView} zoom={initialZoom}>
+				{#each data.data as asso}
+					{#if asso.localisation}
+						<Marker latLng={[asso.localisation.lat, asso.localisation.lon]} width={40} height={40}>
+							<Popup>
+								<h2 class="text-lg">{asso.nom_association}</h2>
+								<div class="flex flex-col gap-1 mt-1">
+									<span><i class="fa-solid fa-location-pin mr-1" /> {asso.adresse}</span>
+									<span><i class="fa-solid fa-envelope mr-1" /> {asso.email}</span>
+									<span><i class="fa-solid fa-phone mr-1" /> {asso.telephone}</span>
+								</div>
+							</Popup>
+						</Marker>
+					{/if}
+				{/each}
+			</Map>
 		</div>
 		<div class="w-full">
-			<h2 class="text-blue-dark text-2xl">Infos complémentaires</h2>
-			<div class="flex">
-				<div class="w-6/12">
+			<h2 class="text-blue-dark text-2xl mb-2 font-bold">Infos complémentaires</h2>
+			<div class="flex gap-8">
+				<div class="w-8/12 p-6 border-blue-dark border-t border-b">
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, magni? Nisi, ullam! Cum
-						amet, officia voluptas accusamus, nisi ab aut placeat animi odio, aspernatur sit dolor.
-						Nulla consectetur aspernatur laboriosam?
+						Sportium Urbis, l'association sportive dynamique de notre ville, offre une variété
+						d'activités sportives adaptées à tous les niveaux et âges. Que vous soyez un passionné
+						de football, un adepte de la course à pied ou un amateur de sports d'équipe, notre
+						association vous accueille avec enthousiasme. Les membres bénéficient d'un accès
+						exclusif à nos installations de pointe, ainsi que de programmes d'entraînement
+						personnalisés dispensés par des coachs expérimentés.
 					</p>
 				</div>
-				<a
-					href="/"
-					class="w-4/12 flex items-center justify-between space-x-4 p-2 bg-blue-dark min-w-48 max-h-fit"
-				>
+				<a href="/" class="flex items-center gap-20 p-2 bg-blue-dark min-w-48 h-fit self-end">
 					<p class="text-white">Contacer</p>
 					<svg
 						width="15"
