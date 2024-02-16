@@ -2,7 +2,7 @@
 
 	import ApexCharts from '$lib/ApexCharts.svelte';
 	import groupBy from '$lib/Utils/groupBy.js';
-
+e
 
 	export let data; // data from api
 
