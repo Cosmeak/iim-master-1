@@ -1,6 +1,5 @@
 
 <script>
-   
    import Button from './Ibutton.svelte'; 
   </script>
   
