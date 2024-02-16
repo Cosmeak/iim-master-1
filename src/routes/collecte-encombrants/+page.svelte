@@ -42,7 +42,7 @@
 	</div>
 </section>
 
-<section class="w-screen mx-auto h-96 p-14">
+<section class="w-full mx-auto h-96 py-14">
 	<Map view={initialView} zoom={initialZoom} />
 </section>
 
