@@ -1,6 +1,8 @@
 <script lang="ts">
+
 	import ApexCharts from '$lib/ApexCharts.svelte';
 	import groupBy from '$lib/Utils/groupBy.js';
+e
 
 	export let data; // data from api
 
@@ -77,6 +79,7 @@
 		</p>
 	</div>
 
+
 	<img
 		src="./assets/expenses-hero.svg"
 		class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12"
@@ -99,6 +102,7 @@
 			gestion des ressources financières.
 		</p>
 
+
 		<p class="pt-8 text-xl">
 			Les coûts généraux de fonctionnement et d'administration sont des dépenses nécessaires pour
 			assurer le bon fonctionnement de l'institution. Les dépenses de personnels couvrent les coûts
@@ -119,5 +123,7 @@
 		</p>
 	</div>
 
+
 	<img src="./assets/expenses-services.svg" alt="" />
+
 </section>
