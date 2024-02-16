@@ -1,101 +1,273 @@
-<script lang="ts">
-	import type { LatLngExpression } from 'leaflet';
-	import Map from '$lib/Leaflet/Map.svelte';
-	import Polygon from '$lib/Leaflet/Vectors/Polygon.svelte';
-	import Circle from '$lib/Leaflet/Vectors/Circle.svelte';
+<section>
+	<div class="w-full p-72 flex justify-center">
+		<form action="" class="flex gap-12 h-fit">
+			<input
+				type="text"
+				name="search"
+				id="search "
+				placeholder="Recherche par nom de données"
+				class="border rounded px-4"
+			/>
+			<button class="bg-blue-dark text-white px-4 py-2 rounded-lg">Rechercher</button>
+		</form>
+	</div>
 
-	const initialView: LatLngExpression = [48.890577, 2.241656];
-	const initialZoom: number = 13;
-</script>
+	<div class="w-100 py-12 bg-blue-light">
+		<h2 class="font-bold text-3xl text-blue-dark uppercase text-center">
+			Qu'est-ce que data.issy ?
+		</h2>
 
-<div class="w-full h-screen">
-	<Map view={initialView} zoom={initialZoom}>
-		<Circle latLng={[48.890577, 2.241656]} radius={2000} />
-		<Polygon
-			latLngList={[
-				[
-					[2.2604256767133735, 48.81871359645161].reverse(),
-					[2.2603372094589282, 48.818650226731926].reverse(),
-					[2.2602753874774866, 48.81853752497936].reverse(),
-					[2.2603118145925123, 48.81840829889422].reverse(),
-					[2.2603858765563367, 48.818267882582134].reverse(),
-					[2.2604818776605677, 48.81815125317316].reverse(),
-					[2.260508542114668, 48.81811885763302].reverse(),
-					[2.2611778597304646, 48.81730569731511].reverse(),
-					[2.2610612502591243, 48.817215907202424].reverse(),
-					[2.2602738499896273, 48.816653649556585].reverse(),
-					[2.2601991273914885, 48.81660029123587].reverse(),
-					[2.260036197770536, 48.81648394663245].reverse(),
-					[2.259871623445558, 48.81635860580657].reverse(),
-					[2.2593602085704507, 48.816541780017666].reverse(),
-					[2.259007638355876, 48.81656764006648].reverse(),
-					[2.258802891139743, 48.816648562829805].reverse(),
-					[2.2587961530999037, 48.81680338595022].reverse(),
-					[2.2589095241918216, 48.81700364997507].reverse(),
-					[2.2591272407036254, 48.817164557773026].reverse(),
-					[2.259338553741693, 48.81736934530019].reverse(),
-					[2.2594203022844828, 48.817607822013144].reverse(),
-					[2.2593397396649166, 48.81781838938338].reverse(),
-					[2.2591293216292714, 48.8179896291229].reverse(),
-					[2.25907980427175, 48.81803623151921].reverse(),
-					[2.2589889254839886, 48.81804650298375].reverse(),
-					[2.2589922517432037, 48.818051740958325].reverse(),
-					[2.2589965018734177, 48.81805905235432].reverse(),
-					[2.2590132764438025, 48.81809432513303].reverse(),
-					[2.2590193382391557, 48.81810803431498].reverse(),
-					[2.2590189518566803, 48.81811576575663].reverse(),
-					[2.259018292163144, 48.818132759199734].reverse(),
-					[2.259019690509051, 48.818148687036846].reverse(),
-					[2.2590218880546535, 48.81816587807269].reverse(),
-					[2.259026500867111, 48.81818542429082].reverse(),
-					[2.2590334044800917, 48.81820669264938].reverse(),
-					[2.259041027427079, 48.81822535814154].reverse(),
-					[2.2590516027151413, 48.81824692087802].reverse(),
-					[2.2590618041524735, 48.81826623282564].reverse(),
-					[2.2590712076995363, 48.81828418984407].reverse(),
-					[2.2590829032252846, 48.818303690929795].reverse(),
-					[2.2590944741545744, 48.8183224726307].reverse(),
-					[2.2591054064670684, 48.818338371430656].reverse(),
-					[2.2591159417473383, 48.818353458318946].reverse(),
-					[2.2591289167925086, 48.81836936978006].reverse(),
-					[2.259138337157541, 48.81838049334744].reverse(),
-					[2.259144845543364, 48.81838817938978].reverse(),
-					[2.2591569044887674, 48.81840156688247].reverse(),
-					[2.2591734150536227, 48.818417771869996].reverse(),
-					[2.259186175442449, 48.81842981552536].reverse(),
-					[2.259190613010548, 48.8184336213609].reverse(),
-					[2.259243310837507, 48.81848936018831].reverse(),
-					[2.2592653728571137, 48.81850775900119].reverse(),
-					[2.259368753603599, 48.81857128940824].reverse(),
-					[2.2594873027138194, 48.81862205696511].reverse(),
-					[2.2595013027084434, 48.81862671080252].reverse(),
-					[2.259510476985158, 48.818629760809515].reverse(),
-					[2.25951089795362, 48.81862975172587].reverse(),
-					[2.2596645448915833, 48.81867311246016].reverse(),
-					[2.259827736184489, 48.818698086569924].reverse(),
-					[2.2599664178305807, 48.818704375909896].reverse(),
-					[2.260034718917368, 48.81869959947234].reverse(),
-					[2.2600635565866583, 48.81871111750047].reverse(),
-					[2.2602370279981496, 48.818704050165444].reverse(),
-					[2.2602497310103984, 48.81871987077454].reverse(),
-					[2.2602655560974467, 48.81873652015572].reverse(),
-					[2.2602828816545877, 48.81875290990511].reverse(),
-					[2.260299571151624, 48.818766327736476].reverse(),
-					[2.260319386458411, 48.818780215505136].reverse(),
-					[2.2603421797511043, 48.8187952009663].reverse(),
-					[2.26036947351953, 48.81880985631986].reverse(),
-					[2.2603956958073246, 48.81882333493296].reverse(),
-					[2.2604250399873798, 48.81883746422972].reverse(),
-					[2.2604540089105445, 48.81884934182922].reverse(),
-					[2.2604778400096484, 48.81885866844505].reverse(),
-					[2.260506563471654, 48.818868745738094].reverse(),
-					[2.260528259861436, 48.81882886534926].reverse(),
-					[2.260541884688964, 48.81879872664256].reverse(),
-					[2.260551616129821, 48.818777197962085].reverse(),
-					[2.260502883695732, 48.818757859093544].reverse(),
-					[2.2604256767133735, 48.81871359645161].reverse()
-				]
-			]}
-		/>
-	</Map>
-</div>
+		<div class="flex gap-20 justify-center items-center mt-12 text-lg text-center">
+			<div class="flex flex-col gap-4 items-center">
+				<i class="fa-solid fa-chart-pie text-green text-6xl" />
+				<p>Un accès facile <br />aux données</p>
+			</div>
+			<div class="flex flex-col gap-4 items-center">
+				<i class="fa-solid fa-palette text-yellow text-6xl" />
+				<p>La création de vos propres<br /> jeux de données</p>
+			</div>
+			<div class="flex flex-col gap-4 items-center">
+				<i class="fa-solid fa-clone text-blue text-6xl" />
+				<p>L’implémentation de nos <br />données sur votre site</p>
+			</div>
+			<div class="flex flex-col gap-4 items-center">
+				<i class="fa-solid fa-eye text-red text-6xl" />
+				<p>Diverses méthodes pour <br />visualiser les données</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-12">
+	<div class="w-3/4 mx-auto">
+		<h2 class="text-center text-3xl text-blue-dark font-bold uppercase">
+			Données pouvant vous intéresser
+		</h2>
+		<p class="mt-4 text-lg text-center">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed quam mi. Duis dictum, velit
+			non finibus auctor, augue turpis pharetra mauris, eu facilisis est lacus eget velit. Ut ligula
+			dolor, vulputate vel facilisis eleifend, porta vulputate neque.
+		</p>
+
+		<div class="grid gap-8 grid-cols-4 grid-rows-2 mt-8">
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div class="w-full">
+					<img src="./assets/home/expenses.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Dépenses de la ville</h4>
+					<p class="mt-2 mb-8">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/expenses" class="underline text-blue-dark absolute bottom-4 right-4">
+						En savoir plus
+					</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/enfances.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Structure petite enfance</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/petite-enfance" class="underline text-blue-dark absolute bottom-4 right-4">
+						En savoir plus
+					</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/sports.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Associations sportives</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a
+						href="/associations-sportives"
+						class="underline text-blue-dark absolute bottom-4 right-4"
+					>
+						En savoir plus
+					</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/encombrants.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Collecte d’encombrants</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/encombrant" class="underline text-blue-dark absolute bottom-4 right-4">
+						En savoir plu
+					</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/climat.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Tableau de bord climatique</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/" class="underline text-blue-dark absolute bottom-4 right-4">En savoir plus</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/commerces.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Commerces à proximité</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/commerces" class="underline text-blue-dark absolute bottom-4 right-4"
+						>En savoir plus</a
+					>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/deliberation.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Déliberations</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/" class="underline text-blue-dark absolute bottom-4 right-4">En savoir plus</a>
+				</div>
+			</div>
+
+			<div class="shadow rounded-lg relative overflow-x-hidden">
+				<div>
+					<img src="./assets/home/financial-report.png" alt="" class="object-cover w-full" />
+				</div>
+				<div class="p-4">
+					<h4 class="font-semibold text-xl">Rapport financier</h4>
+					<p class="mt-2">
+						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
+						incididunt ut labore et dol ore mag na aliqua.
+					</p>
+					<a href="/" class="underline text-blue-dark absolute bottom-4 right-4">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+		<div class="flex justify-center">
+			<a href="/" class="underline text-lg text-blue-dark mt-12 font-semibold">Voir plus...</a>
+		</div>
+	</div>
+</section>
+
+<section class="bg-[#FAF8F0] py-12">
+	<div class="w-2/3 mx-auto flex flex-col gap-8 items-center">
+		<h2 class="font-bold text-3xl text-blue-dark uppercase text-center">
+			Qu'est-ce que data.issy ?
+		</h2>
+		<p class="text-center mt-4 text-lg">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed quam mi. Duis dictum, velit
+			non finibus auctor, augue turpis pharetra mauris, eu facilisis est lacus eget velit. Ut ligula
+			dolor, vulputate vel facilisis eleifend, porta vulputate neque.
+		</p>
+
+		<div>
+			<a href="/" class="px-8 py-4 bg-yellow rounded-lg font-semibold mt-4 shadow">
+				En savoir plus
+			</a>
+		</div>
+	</div>
+</section>
+
+<section class="py-12">
+	<h2 class="text-center text-3xl text-blue-dark font-bold uppercase">Démarches de la ville</h2>
+	<p class="mt-4 text-lg text-center">
+		La ville de Issy-les-Moulineaux vise à améliorer son cadre de vie en mettant en œuvre divers
+		projets pour devenir une ville numérique innovante.
+	</p>
+	<div class="w-2/3 mx-auto grid grid-cols-3 gap-12 mt-6">
+		<div class="rounded-lg shadow p-8 border-t-8 border-green">
+			<p class="text-2xl font-semibold text-center">Qu'est-ce que la Smart city ?</p>
+			<p class="text-center mt-2">
+				Une ville écoresponsable, évitant les embouteillages, maîtrisant ses ressources (eau,
+				énergie) et offrant des moyens de communication accessibles aux citoyens.
+			</p>
+		</div>
+		<div class="rounded-lg shadow p-8 border-t-8 border-yellow">
+			<p class="text-2xl font-semibold text-center">Les projets numériques</p>
+			<p class="text-center mt-2">
+				Toujours à l'avant-garde, la ville s'affirme comme un terrain d'expérimentation.
+			</p>
+		</div>
+		<div class="rounded-lg shadow p-8 border-t-8 border-blue">
+			<p class="text-2xl font-semibold text-center">Issy.com À Votre Ecoute</p>
+			<p class="text-center mt-2">
+				Le lancement du nouvel issy.com s'accompagne d'un enrichissement permanent de
+				fonctionnalités pour vous permettre de mieux profiter de cet outil.
+			</p>
+		</div>
+	</div>
+
+	<div class="rounded-lg w-2/3 shadow p-8 border-t-8 border-red mx-auto mt-8">
+		<p class="text-2xl font-semibold">Open data</p>
+		<p class=" mt-2">
+			La donnée est le carburant de la Smart City. En facilitant l'accès aux données publiques, dans
+			une démarche d'open data mise en oeuvre depuis 2012, la Ville s'inscrit dans un mouvement plus
+			vaste de mise en commun des informations utiles pour tous.
+		</p>
+	</div>
+
+	<div class="flex justify-center mt-8">
+		<button class="bg-blue-dark rounded-lg px-8 py-2 text-white font-semibold shadow"
+			>En savoir plus</button
+		>
+	</div>
+</section>
+
+<section class="bg-[#F3FAF0] py-12">
+	<h2 class="font-bold text-3xl text-blue-dark uppercase text-center">A vous de jouer !</h2>
+	<p class="mt-4 text-lg text-center mx-auto w-2/3">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed quam mi. Duis dictum, velit
+		non finibus auctor, augue turpis pharetra mauris, eu facilisis est lacus eget velit. Ut ligula
+		dolor, vulputate vel facilisis eleifend, porta vulputate neque.
+	</p>
+	<div class=" w-2/3 mx-auto gap-20 grid grid-cols-4 mt-12 text-lg text-center">
+		<div class="flex flex-col gap-4 items-center p-6 border-2 border-green rounded-lg bg-lightgray">
+			<i class="fa-solid fa-chart-simple text-green text-6xl" />
+			<p class="text-lg">Créer un Graphique</p>
+		</div>
+		<div class="flex flex-col gap-4 items-center p-6 border-2 border-green rounded-lg bg-lightgray">
+			<i class="fa-solid fa-map text-green text-6xl" />
+			<p class="text-lg">Créer une Carte</p>
+		</div>
+		<div class="flex flex-col gap-4 items-center p-6 border-2 border-green rounded-lg bg-lightgray">
+			<i class="fa-solid fa-gears text-green text-6xl" />
+			<p class="text-lg">Utiliser l’API</p>
+		</div>
+		<div class="flex flex-col gap-4 items-center p-6 border-2 border-green rounded-lg bg-lightgray">
+			<i class="fa-solid fa-book-bookmark text-green text-6xl" />
+			<p class="text-lg">Accéder à la Documentation</p>
+		</div>
+	</div>
+</section>
