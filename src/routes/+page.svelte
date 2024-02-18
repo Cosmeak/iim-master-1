@@ -116,8 +116,8 @@
 						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
-					<a href="/encombrant" class="underline text-blue-dark absolute bottom-4 right-4">
-						En savoir plu
+					<a href="/collecte-encombrants" class="underline text-blue-dark absolute bottom-4 right-4">
+						En savoir plus
 					</a>
 				</div>
 			</div>
