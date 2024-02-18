@@ -5,7 +5,10 @@ data class Movie(
     val title: String,
     val overview: String,
     val poster_path: String,
-    val vote_average: Double
+    val vote_average: Double,
+    val original_language: String,
+    val release_date: String,
+    val vote_count: Int
 )
 
 data class MovieResponse(
