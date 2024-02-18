@@ -16,6 +16,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> get() = _movies
+
     private val _selectedMovie = MutableLiveData<Movie>()
     val selectedMovie: LiveData<Movie> get() = _selectedMovie
 
@@ -32,10 +33,6 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         } else {
             // error
         }
-    }
-
-    fun setSelectedMovie(movie: Movie) {
-        _selectedMovie.value = movie
     }
 
     suspend fun fetchMovieById(movieId: Int) {

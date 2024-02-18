@@ -4,15 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.android_kotlin.model.Movie
 import com.example.android_kotlin.model.interfaces.ApiService
 import com.example.android_kotlin.model.repository.MovieRepository
 import com.example.android_kotlin.view.HomePage
+import com.example.android_kotlin.view.MovieDetailScreen
 import com.example.android_kotlin.viewmodel.MovieViewModel
 import com.example.android_kotlin.viewmodel.MovieViewModelFactory
 import com.example.myapplication.BuildConfig
@@ -37,11 +39,11 @@ class MainActivity : AppCompatActivity() {
         movieViewModel = ViewModelProvider(this, MovieViewModelFactory(repository))
             .get(MovieViewModel::class.java)
 
-        movieViewModel.movies.observe(this, Observer { movies ->
+        movieViewModel.movies.observe(this) { movies ->
             setContent {
                 RetroStreamApp(movies)
             }
-        })
+        }
     }
 }
 
@@ -49,6 +51,15 @@ class MainActivity : AppCompatActivity() {
 fun RetroStreamApp(movies: List<Movie>) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomePage(navController, movies) }
+        composable("home") {
+            HomePage(navController, movies)
+        }
+        composable(
+            route = "movieDetail/{movieId}",
+            arguments = listOf(navArgument("movieId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val movieId = backStackEntry.arguments?.getInt("movieId") ?: 0
+            MovieDetailScreen(navController, movieId)
+        }
     }
 }
