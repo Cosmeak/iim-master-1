@@ -38,6 +38,7 @@
 </script>
 
 <div bind:this={container}>
+
 	{#if marker}
 		<slot />
 	{/if}

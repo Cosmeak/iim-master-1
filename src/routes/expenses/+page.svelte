@@ -119,5 +119,5 @@
 		</p>
 	</div>
 
-	<img src="./assets/expenses-services.svg" alt="" />
+	<img src="/assets/expenses-services.svg" alt="" />
 </section>
