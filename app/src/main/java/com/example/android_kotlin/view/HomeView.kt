@@ -106,17 +106,8 @@ fun HomePage(navController: NavController, movies: List<Movie>) {
 
                             Row {
                                 val filledStars = kotlin.math.floor(movie.vote_average).toInt() / 2
-                                val halfStar = !(movie.vote_average.rem(1).equals(0.0))
 
                                 repeat(filledStars) {
-                                    Icon(
-                                        modifier = Modifier.size(18.dp),
-                                        imageVector = Icons.Rounded.Star,
-                                        contentDescription = null,
-                                        tint = Color.Yellow
-                                    )
-                                }
-                                if (halfStar) {
                                     Icon(
                                         modifier = Modifier.size(18.dp),
                                         imageVector = Icons.Rounded.Star,
