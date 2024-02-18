@@ -46,8 +46,9 @@ export default {
 			borderRadius: {
 				'4xl': '2rem'
 			},
-			backgroundImage: (theme) => ({
-				hero: "url('./assets/bgImmeuble.png')"
+			backgroundImage: () => ({
+				hero: "url('./assets/bgImmeuble.png')",
+        encombrants: "url('./assets/imgEncombrants.png')",
 			})
 		}
 	},

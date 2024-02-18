@@ -1,3 +1,8 @@
+<script lang="ts">
+  import { base } from '$app/paths';
+</script>
+
+
 <section>
 	<div class="w-full p-72 flex justify-center">
 		<form action="" class="flex gap-12 h-fit">
@@ -52,7 +57,7 @@
 		<div class="grid gap-8 grid-cols-4 grid-rows-2 mt-8">
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div class="w-full">
-					<img src="/assets/home/expenses.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/expenses.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Dépenses de la ville</h4>
@@ -60,7 +65,7 @@
 						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
-					<a href="/expenses" class="underline text-blue-dark absolute bottom-4 right-4">
+					<a href="{base}/expenses" class="underline text-blue-dark absolute bottom-4 right-4">
 						En savoir plus
 					</a>
 				</div>
@@ -68,7 +73,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/enfances.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/enfances.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Structure petite enfance</h4>
@@ -76,7 +81,7 @@
 						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
-					<a href="/petite-enfance" class="underline text-blue-dark absolute bottom-4 right-4">
+					<a href="{base}/petite-enfance" class="underline text-blue-dark absolute bottom-4 right-4">
 						En savoir plus
 					</a>
 				</div>
@@ -84,7 +89,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/sports.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/sports.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Associations sportives</h4>
@@ -93,7 +98,7 @@
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
 					<a
-						href="/associations-sportives"
+						href="{base}/associations-sportives"
 						class="underline text-blue-dark absolute bottom-4 right-4"
 					>
 						En savoir plus
@@ -103,7 +108,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/encombrants.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/encombrants.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Collecte d’encombrants</h4>
@@ -111,15 +116,15 @@
 						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
-					<a href="/encombrant" class="underline text-blue-dark absolute bottom-4 right-4">
-						En savoir plu
+					<a href="/collecte-encombrants" class="underline text-blue-dark absolute bottom-4 right-4">
+						En savoir plus
 					</a>
 				</div>
 			</div>
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/climat.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/climat.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Tableau de bord climatique</h4>
@@ -133,7 +138,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/commerces.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/commerces.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Commerces à proximité</h4>
@@ -141,7 +146,7 @@
 						Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do eius mod tem por
 						incididunt ut labore et dol ore mag na aliqua.
 					</p>
-					<a href="/commerces" class="underline text-blue-dark absolute bottom-4 right-4"
+					<a href="{base}/commerces" class="underline text-blue-dark absolute bottom-4 right-4"
 						>En savoir plus</a
 					>
 				</div>
@@ -149,7 +154,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/deliberation.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/deliberation.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Déliberations</h4>
@@ -163,7 +168,7 @@
 
 			<div class="shadow rounded-lg relative overflow-x-hidden">
 				<div>
-					<img src="/assets/home/financial-report.png" alt="" class="object-cover w-full" />
+					<img src="./assets/home/financial-report.png" alt="" class="object-cover w-full" />
 				</div>
 				<div class="p-4">
 					<h4 class="font-semibold text-xl">Rapport financier</h4>

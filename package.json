@@ -2,6 +2,8 @@
 	"name": "data.issy.com",
 	"version": "0.0.1",
 	"private": true,
+  "prepare": "svelte-kit sync",
+  "type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -34,8 +36,6 @@
 		"vite": "^4.4.2",
 		"vitest": "^0.34.0"
 	},
-	"prepare": "svelte-kit sync",
-	"type": "module",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^6.5.1",
 		"apexcharts": "^3.45.1",
