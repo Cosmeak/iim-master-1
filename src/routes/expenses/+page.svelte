@@ -54,12 +54,12 @@
 <section
 	class="w-full h-screen bg-gradient-to-b from-white from-10% to-[#9DCDE4] flex justify-center items-center relative"
 >
-	<div class="w-7/12 flex flex-col gap-32">
+	<div class="w-8/12 flex flex-col gap-32">
 		<h2 class="text-blue-dark text-4xl font-semibold text-center">
 			Dépenses de fonctionnement d'Issy-les-Moulineaux par types de services à la population
 		</h2>
 
-		<div class="flex justify-between gap-6">
+		<div class="flex justify-between gap-6 z-10">
 			{#each lastThreeYearsTotal as year}
 				<div class="px-12 py-16 rounded-lg text-white bg-[#8BCBEA] text-5xl text-center">
 					<p>En {year.year}</p>
@@ -78,19 +78,19 @@
 	</div>
 
 	<img
-		src="./assets/expenses-hero.svg"
-		class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12"
+		src="/assets/expenses-hero.svg"
+		class="absolute -left-44 -translate-y-1/2 top-1/3 h-10/12 z-0"
 		alt=""
 	/>
 </section>
 
-<section class="px-44 py-8">
+<section class="w-8/12 mx-auto py-8">
 	<div class="p-4 border-2 border-lightgray rounded-lg">
 		<ApexCharts series={chartSeries} options={chartOptions} height="700px" />
 	</div>
 </section>
 
-<section class="text-blue-dark p-24 flex gap-8">
+<section class="text-blue-dark py-24 flex gap-8 w-8/12 mx-auto">
 	<div>
 		<h2 class="text-3xl font-bold">Services utilisés</h2>
 		<p class="pt-8 text-xl">
