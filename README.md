@@ -17,6 +17,4 @@ __**Ce projet est à but éducatif, merci de ne pas l'utiliser en production, au
 
 ## Informations complémentaires
 
-L'inspiration de se projet provient de Oğuzhan Ekiz pour les visuels de l'interface. Vous pouvez retrouver le travail qui nous a inspiré [ici](https://www.behance.net/gallery/175972671/NETFLIX-UI-RETRO-REDESIGN).
-
 The Movie DB: https://www.themoviedb.org/
