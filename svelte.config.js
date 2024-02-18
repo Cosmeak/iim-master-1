@@ -15,7 +15,7 @@ const config = {
       fallback: '404.html'
     }),
     paths: {
-      base: process.argv.includes('dev') ? '' : 'https://cosmeak.github.io/data.issy.com'
+      base: process.argv.includes('dev') ? '' : '/data.issy.com'
     }
 	}
 };
