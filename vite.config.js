@@ -1,6 +1,7 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 import { Server } from "socket.io";
+import tailwindcss from "@tailwindcss/vite";
 
 const webSocketServer = {
   name: "webSocketServer",
@@ -16,5 +17,5 @@ const webSocketServer = {
 };
 
 export default defineConfig({
-  plugins: [sveltekit(), webSocketServer],
+  plugins: [sveltekit(), tailwindcss(), webSocketServer],
 });
