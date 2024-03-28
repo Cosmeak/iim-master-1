@@ -48,8 +48,10 @@
 </script>
 
 <main class="bg-primary-blue min-h-screen items-center">
-    <h1 class="text-light p-3 text-2xl">Adventure Choices</h1>
-    <div>
+    <div class="flex justify-center w-auto">
+        <h1 class="text-light p-3 text-2xl">Adventure Choices</h1>
+    </div>
+    <div class="flex justify-between">
 
         <form
                 class="mt-auto flex items-center justify-between"
@@ -57,7 +59,7 @@
         >
             <button
                     type="submit"
-                    class="w-1/6 rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
+                    class="rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
             >Aventure 1 : L'Âge des Chasseurs</button
             >
         </form>
@@ -69,7 +71,7 @@
         >
             <button
                     type="submit"
-                    class="w-1/6 rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
+                    class="rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
             >Aventure 2 : Les Royaumes Déchus</button
             >
         </form>
@@ -81,9 +83,13 @@
         >
             <button
                     type="submit"
-                    class="w-1/6 rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
+                    class="rounded-lg bg-blue-500 py-2 px-4 text-white hover:cursor-pointer hover:bg-blue-600 focus:outline-none"
             >Aventure 3 : Le Crépuscule des Dieux</button
             >
         </form>
+    </div>
+    
+    <div class="flex justify-center">
+        <img src="./logo.png" class="w-2/5 m-8" alt="">
     </div>
 </main>

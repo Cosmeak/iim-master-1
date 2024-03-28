@@ -80,4 +80,7 @@
             <!-- End send message -->
         </div>
     </div>
+    <div>
+        <img src="./crepuscule_des_dieux_intro.png" class="h-screen w-screen object-cover" alt="">
+    </div>
 </main>
