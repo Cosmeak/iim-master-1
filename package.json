@@ -1,27 +1,27 @@
 {
-	"name": "loretriad-ventures",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-node": "^5.0.1",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"svelte": "^4.2.7",
-		"vite": "^5.0.3"
-	},
-	"type": "module",
-	"dependencies": {
-		"@mistralai/mistralai": "^0.1.3",
-		"@tailwindcss/vite": "^4.0.0-alpha.10",
-		"openai": "^4.29.2",
-		"socket.io": "^4.7.5",
-		"socket.io-client": "^4.7.5",
-		"tailwindcss": "^4.0.0-alpha.10"
-	}
+    "name": "loretriad-ventures",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-auto": "^3.0.0",
+        "@sveltejs/adapter-node": "^5.0.1",
+        "@sveltejs/kit": "^2.0.0",
+        "@tailwindcss/vite": "^4.0.0-alpha.10",
+        "@sveltejs/vite-plugin-svelte": "^3.0.0",
+        "svelte": "^4.2.7",
+        "tailwindcss": "^4.0.0-alpha.10",
+        "vite": "^5.0.3"
+    },
+    "type": "module",
+    "dependencies": {
+        "@mistralai/mistralai": "^0.1.3",
+        "openai": "^4.29.2",
+        "socket.io": "^4.7.5",
+        "socket.io-client": "^4.7.5"
+    }
 }

@@ -17,5 +17,5 @@ const webSocketServer = {
 };
 
 export default defineConfig({
-  plugins: [sveltekit(), tailwindcss(), webSocketServer],
+  plugins: [sveltekit(), webSocketServer, tailwindcss()],
 });
