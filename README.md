@@ -1,38 +1,63 @@
-# create-svelte
+# LoreTriad Ventures
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Informations Techniques
 
-## Creating a project
+-   **Technologie :** Svelte (Kit)
+-   **IA textuel :** Mistral
+-   **IA génération d'image :** OpenAI
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Installation
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Lancer le projet
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Ligne directrice du projet
 
-To create a production version of your app:
+-   **Thème :** Donjon et Dragon
+-   **Jeu :** Opposition entre un joueur et une IA dans trois univers distincts.
+-   **Déroulement :** Chaque univers sera accompagné d'un prompt définissant le rôle de l'IA comme maître du jeu et celui du joueur. Une seule classe sera disponible au début. Les règles de DnD seront intégrées. Des images seront générées pour chaque lieu.
 
-```bash
-npm run build
-```
+## Inspirations
 
-You can preview the production build with `npm run preview`.
+-   Dragon's Dogma
+-   Baldur's Gate 3
+-   Monster Hunter World
+-   Donjons et Dragons
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Univers Disponibles
+
+-   L'Âge des Chasseurs
+-   Les Royaumes Déchus
+-   Le Crépuscule des Dieux
+
+## Histoire
+
+-   On connaît l'emplacement de départ du joueur et l'objectif final or le déroulement de l'histoire est généré par l'IA.
+
+## Fiche Personnage
+
+-   **Nom du Joueur :** Champ texte
+-   **Nom du Personnage :** Généré par IA
+-   **Race :** Généré par IA
+-   **Classe :** Généré par IA + race du joueur
+-   **Stats :** Force, Dextérité, Constitution, Intelligence, Sagesse, Charisme (Random entre 1 et 20)
+-   **Points de vie :** MAX 10 (Random)
+-   **Vitesse :** MAX 5 (Random)
+-   **Équipement :** 4 objets choisis parmi 20 (Random)
+-   **Attaques :** 4 sorts générés en fonction de la race et de la classe avec descriptions. Possibilité d'altérer les stats de la cible.
+
+Ces informations servent de guide pour le développement du projet.
+
+## Contributeurs
+
+-   [Guillaume](https://github.com/Cosmeak)
+-   [Antoine](https://github.com/AntoineBendafiSchulmann)
+-   [Yannis](https://github.com/yannisobert)
+-   [Soren](https://github.com/SorenMesselier-Sentis)
