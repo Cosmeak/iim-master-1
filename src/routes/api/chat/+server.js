@@ -3,11 +3,11 @@ import { env } from "$env/dynamic/private";
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
-  const { message } = await request.json();
+  const { messages } = await request.json();
   const client = new MistralClient(env.MISTRAL_API_KEY);
   const response = client.chatStream({
     model: "open-mistral-7b",
-    messages: [{ role: "user", content: message }],
+    messages,
   });
 
   const stream = new ReadableStream({
