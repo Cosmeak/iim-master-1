@@ -149,34 +149,35 @@ Câbles et connecteurs: Pour relier tous les composants.
 
 La pile 9V est connectée au régulateur de tension L7805.
 Le L7805 réduit la tension à 5V, qui alimente l'ESP8266 et le pont H.
-Contrôle des Moteurs :
+#### Contrôle des Moteurs :
 
 Les moteurs sont connectés aux sorties du module de pont H (L298N).
 Les broches motor1PWM et motor2PWM de l'ESP8266 sont connectées aux entrées de commande PWM du pont H pour la vitesse des moteurs.
 Les broches motor1DIR et motor2DIR sont utilisées pour contrôler la direction de rotation des moteurs.
-Servomoteur:
 
+#### Servomoteur:
 Le servomoteur est contrôlé par une broche spécifique (indiquée comme D...) sur l'ESP8266.
-Procédure de Montage
-Montage du Pont H:
+### Procédure de Montage
+#### 1.Montage du Pont H:
 
 Connectez l'entrée d'alimentation du module de pont H au régulateur de tension L7805.
 Raccordez les sorties du pont H aux moteurs.
-Connexion des Moteurs à l'ESP8266:
+#### 2.Connexion des Moteurs à l'ESP8266:
 
 Branchez les broches de contrôle de vitesse et de direction (PWM et DIR) aux entrées correspondantes sur le module de pont H.
-Configuration du Servomoteur:
+#### 3. Configuration du Servomoteur:
 
-Attachez le servomoteur à la broche définie sur l'ESP8266.
-Assurez-vous que le servomoteur est alimenté correctement et dispose d'une masse commune avec l'ESP8266.
-Connexion de l'ESP8266:
+- Attachez le servomoteur à la broche définie sur l'ESP8266.
+- Assurez-vous que le servomoteur est alimenté correctement et dispose d'une masse commune avec l'ESP8266.
 
-Alimentez l'ESP8266 à partir du régulateur de tension L7805.
-Configurez l'ESP8266 avec le code nécessaire pour implémenter le protocole ESP-NOW et la logique de contrôle des moteurs.
+#### 4.Connexion de l'ESP8266:
+
+- Alimentez l'ESP8266 à partir du régulateur de tension L7805.
+- Configurez l'ESP8266 avec le code nécessaire pour implémenter le protocole ESP-NOW et la logique de contrôle des moteurs.
 
 ### Considérations de Sécurité
-Assurez-vous que toutes les connexions sont bien isolées pour éviter tout court-circuit.
-Confirmez que la source d'alimentation est capable de fournir le courant nécessaire pour les moteurs sans surchauffer ou sans dépasser les limites de tension des composants.
+- Assurez-vous que toutes les connexions sont bien isolées pour éviter tout court-circuit.
+- Confirmez que la source d'alimentation est capable de fournir le courant nécessaire pour les moteurs sans surchauffer ou sans dépasser les limites de tension des composants.
 
 ## Photos du montage electronique
 
