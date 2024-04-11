@@ -174,6 +174,10 @@ Connexion de l'ESP8266:
 Alimentez l'ESP8266 à partir du régulateur de tension L7805.
 Configurez l'ESP8266 avec le code nécessaire pour implémenter le protocole ESP-NOW et la logique de contrôle des moteurs.
 
+### Considérations de Sécurité
+Assurez-vous que toutes les connexions sont bien isolées pour éviter tout court-circuit.
+Confirmez que la source d'alimentation est capable de fournir le courant nécessaire pour les moteurs sans surchauffer ou sans dépasser les limites de tension des composants.
+
 ## Photos du montage electronique
 
 ![Exemple d'image](assets/photo.png)
