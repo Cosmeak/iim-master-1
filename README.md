@@ -13,14 +13,14 @@ Ce guide décrit la mise en place d'une communication entre deux modules ESP8266
  ┃ ┗ 📜car.ino
 
 ## Prérequis
-### Matériel :
-
-2 modules ESP8266
-1 Joystick analogique
-2 moteurs 
-1 servomoteur
-Fils de connexion
-Source d'alimentation appropriée pour les ESP8266 et les moteurs ici une pile 9V
+### Composants Requis :
+2x ESP8266 Modules: Un pour l'émetteur et un pour le récepteur.
+Module Pont H (ex. L298N): Utilisé pour inverser la direction des moteurs  et contrôler leur vitesse.
+2x Moteurs : Moteurs commandés par le pont H.
+1x Servomoteur: Pour ajuster la direction en réponse aux signaux du joystick.
+1x Régulateur de Tension L7805: Pour stabiliser la tension d'alimentation de l'ESP8266 à 5V.
+1x Pile 9V: Source d'alimentation principale du système.
+Câbles et connecteurs: Pour relier tous les composants.
 
 ### Logiciel :
 IDE Arduino avec le support ESP8266 installé
@@ -124,7 +124,6 @@ void loop() {
 }
 ```
 
-
 ## Logique de contrôle des moteurs
 Dans la fonction controlMotors(int x, int y), vous devrez implémenter la logique pour convertir les valeurs x et y en signaux de contrôle pour les moteurs  et le servo moteur. La conversion typique implique de mapper la plage des valeurs du joystick (0 à 1023) à une plage utilisable pour le contrôle de vitesse des moteurs (par exemple, 0 à 255 pour analogWrite) et à la plage de rotation du servo moteur (0 à 180 degrés).
 
@@ -133,15 +132,6 @@ Dans la fonction controlMotors(int x, int y), vous devrez implémenter la logiqu
 ![Exemple d'image](assets/IMG_2670.png)
 
 Le montage électronique pour ce projet utilise un ESP8266 comme cerveau central pour contrôler deux moteurs  via un module de pont H et un servomoteur pour les commandes directionnelles.
-
-### Composants Requis
-2x ESP8266 Modules: Un pour l'émetteur et un pour le récepteur.
-Module Pont H (ex. L298N): Utilisé pour inverser la direction des moteurs  et contrôler leur vitesse.
-2x Moteurs : Moteurs commandés par le pont H.
-1x Servomoteur: Pour ajuster la direction en réponse aux signaux du joystick.
-1x Régulateur de Tension L7805: Pour stabiliser la tension d'alimentation de l'ESP8266 à 5V.
-1x Pile 9V: Source d'alimentation principale du système.
-Câbles et connecteurs: Pour relier tous les composants.
 
 ### Schéma de Connexion
 
@@ -179,6 +169,6 @@ Branchez les broches de contrôle de vitesse et de direction (PWM et DIR) aux en
 - Assurez-vous que toutes les connexions sont bien isolées pour éviter tout court-circuit.
 - Confirmez que la source d'alimentation est capable de fournir le courant nécessaire pour les moteurs sans surchauffer ou sans dépasser les limites de tension des composants.
 
-## Photos du montage electronique
+## Photos du montage electronique (en cours de montage)
 
 ![Exemple d'image](assets/photo.png)
