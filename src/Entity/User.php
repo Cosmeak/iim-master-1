@@ -2,28 +2,44 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
+#[ApiResource(
+        operations: [
+            new Get(normalizationContext: ['groups' => 'user:item']),
+            new GetCollection(normalizationContext: ['groups' => 'user:list'])
+        ],
+    paginationEnabled: false,
+)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['user:list', 'user:item'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Groups(['user:list', 'user:item'])]
     private ?string $email = null;
 
     /**
      * @var list<string> The user roles
      */
     #[ORM\Column]
+    #[Groups(['user:list', 'user:item'])]
     private array $roles = [];
 
     /**
@@ -31,6 +47,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    /**
+     * @var Collection<int, ApiToken>
+     */
+    #[ORM\OneToMany(targetEntity: ApiToken::class, mappedBy: 'userToken')]
+    private Collection $apiTokens;
+
+    public function __construct()
+    {
+        $this->apiTokens = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,5 +132,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, ApiToken>
+     */
+    public function getApiTokens(): Collection
+    {
+        return $this->apiTokens;
+    }
+
+    public function addApiToken(ApiToken $apiToken): static
+    {
+        if (!$this->apiTokens->contains($apiToken)) {
+            $this->apiTokens->add($apiToken);
+            $apiToken->setUserToken($this);
+        }
+
+        return $this;
+    }
+
+    public function removeApiToken(ApiToken $apiToken): static
+    {
+        if ($this->apiTokens->removeElement($apiToken)) {
+            // set the owning side to null (unless already changed)
+            if ($apiToken->getUserToken() === $this) {
+                $apiToken->setUserToken(null);
+            }
+        }
+
+        return $this;
     }
 }
