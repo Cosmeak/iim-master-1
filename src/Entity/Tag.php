@@ -42,9 +42,16 @@ class Tag
     #[ORM\ManyToMany(targetEntity: Calendar::class, inversedBy: 'tags')]
     private Collection $calendar_id;
 
+    /**
+     * @var Collection<int, EventTags>
+     */
+    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'tag_id')]
+    private Collection $eventTags;
+
     public function __construct()
     {
         $this->calendar_id = new ArrayCollection();
+        $this->eventTags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -156,6 +163,33 @@ class Tag
     public function removeCalendarId(Calendar $calendarId): static
     {
         $this->calendar_id->removeElement($calendarId);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, EventTags>
+     */
+    public function getEventTags(): Collection
+    {
+        return $this->eventTags;
+    }
+
+    public function addEventTag(EventTags $eventTag): static
+    {
+        if (!$this->eventTags->contains($eventTag)) {
+            $this->eventTags->add($eventTag);
+            $eventTag->addTagId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEventTag(EventTags $eventTag): static
+    {
+        if ($this->eventTags->removeElement($eventTag)) {
+            $eventTag->removeTagId($this);
+        }
 
         return $this;
     }
