@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EventRepository;
+use CrEOF\Spatial\PHP\Types\Geography\Point;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -78,6 +79,9 @@ class Event
      */
     #[ORM\OneToMany(targetEntity: Todo::class, mappedBy: 'event_id')]
     private Collection $todos;
+
+    #[ORM\Column(type: 'point', nullable: true)]
+    private ?Point $localisation = null;
 
     public function __construct()
     {
@@ -356,6 +360,18 @@ class Event
                 $todo->setEventId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLocalisation(): Point
+    {
+        return $this->localisation;
+    }
+
+    public function setLocalisation(Point $localisation): self
+    {
+        $this->localisation = $localisation;
 
         return $this;
     }
