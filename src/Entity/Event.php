@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\EventRepository;
 use CrEOF\Spatial\PHP\Types\Geography\Point;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,6 +11,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
+#[ApiResource]
 class Event
 {
     #[ORM\Id]
@@ -379,6 +381,7 @@ class Event
     public function setLocalisation(Point $localisation): self
     {
         $this->localisation = $localisation;
+    }
 
     /**
      * @return Collection<int, EventTags>
