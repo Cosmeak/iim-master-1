@@ -83,6 +83,12 @@ class Event
     #[ORM\Column(type: 'point', nullable: true)]
     private ?Point $localisation = null;
 
+    /**
+     * @var Collection<int, EventTags>
+     */
+    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'event_id')]
+    private Collection $eventTags;
+
     public function __construct()
     {
         $this->recursive_on = new ArrayCollection();
@@ -90,6 +96,7 @@ class Event
         $this->calendar_id = new ArrayCollection();
         $this->files = new ArrayCollection();
         $this->todos = new ArrayCollection();
+        $this->eventTags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -372,6 +379,30 @@ class Event
     public function setLocalisation(Point $localisation): self
     {
         $this->localisation = $localisation;
+
+    /**
+     * @return Collection<int, EventTags>
+     */
+    public function getEventTags(): Collection
+    {
+        return $this->eventTags;
+    }
+
+    public function addEventTag(EventTags $eventTag): static
+    {
+        if (!$this->eventTags->contains($eventTag)) {
+            $this->eventTags->add($eventTag);
+            $eventTag->addEventId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEventTag(EventTags $eventTag): static
+    {
+        if ($this->eventTags->removeElement($eventTag)) {
+            $eventTag->removeEventId($this);
+        }
 
         return $this;
     }
