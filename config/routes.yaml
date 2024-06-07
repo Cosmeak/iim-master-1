@@ -9,5 +9,5 @@ auth:
     methods: ['POST']
 
 
-api_login_check:
-    path: /login_check
+api_login:
+    path: /login
