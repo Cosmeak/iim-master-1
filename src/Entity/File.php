@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\FileRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FileRepository::class)]
+#[ApiResource]
 class File
 {
     #[ORM\Id]
@@ -36,7 +38,7 @@ class File
     /**
      * @var Collection<int, Todo>
      */
-    #[ORM\ManyToMany(targetEntity: Todo::class, mappedBy: 'file_id')]
+    #[ORM\ManyToMany(targetEntity: Todo::class, mappedBy: 'file')]
     private Collection $todos;
 
     public function __construct()
