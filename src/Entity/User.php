@@ -16,13 +16,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
-#[ApiResource(
-        operations: [
-            new Get(normalizationContext: ['groups' => 'user:item']),
-            new GetCollection(normalizationContext: ['groups' => 'user:list'])
-        ],
-    paginationEnabled: false,
-)]
+#[ApiResource]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
