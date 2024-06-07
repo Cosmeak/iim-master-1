@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240606202346 extends AbstractMigration
+final class Version20240607131140 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -19,8 +19,12 @@ final class Version20240606202346 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
+        // Custom
+        $this->addSql('CREATE EXTENSION postgis');
+
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SEQUENCE acces_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+        $this->addSql('CREATE SEQUENCE api_token_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE calendar_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE event_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE event_tags_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
@@ -29,14 +33,17 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('CREATE SEQUENCE tag_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE todo_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE token_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+        $this->addSql('CREATE SEQUENCE "user_id_seq" INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE acces (id INT NOT NULL, role TEXT NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('COMMENT ON COLUMN acces.created_at IS \'(DC2Type:datetime_immutable)\'');
         $this->addSql('COMMENT ON COLUMN acces.updated_at IS \'(DC2Type:datetime_immutable)\'');
+        $this->addSql('CREATE TABLE api_token (id INT NOT NULL, user_token_id INT DEFAULT NULL, token VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE INDEX IDX_7BA2F5EBA15303B9 ON api_token (user_token_id)');
         $this->addSql('CREATE TABLE calendar (id INT NOT NULL, user_id_id INT NOT NULL, slug VARCHAR(255) NOT NULL, title VARCHAR(255) NOT NULL, description TEXT DEFAULT NULL, color VARCHAR(7) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_6EA9A1469D86650F ON calendar (user_id_id)');
         $this->addSql('COMMENT ON COLUMN calendar.created_at IS \'(DC2Type:datetime_immutable)\'');
         $this->addSql('COMMENT ON COLUMN calendar.updated_at IS \'(DC2Type:datetime_immutable)\'');
-        $this->addSql('CREATE TABLE event (id INT NOT NULL, slug VARCHAR(255) NOT NULL, title VARCHAR(255) DEFAULT NULL, description TEXT DEFAULT NULL, url VARCHAR(255) DEFAULT NULL, start_date DATE DEFAULT NULL, start_time TIME(0) WITHOUT TIME ZONE DEFAULT NULL, end_date DATE DEFAULT NULL, end_time TIME(0) WITHOUT TIME ZONE DEFAULT NULL, is_full_day BOOLEAN NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, localisation Geometry(Point) DEFAULT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE event (id INT NOT NULL, slug VARCHAR(255) NOT NULL, title VARCHAR(255) DEFAULT NULL, description TEXT DEFAULT NULL, url VARCHAR(255) DEFAULT NULL, start_date DATE DEFAULT NULL, start_time TIME(0) WITHOUT TIME ZONE DEFAULT NULL, end_date DATE DEFAULT NULL, end_time TIME(0) WITHOUT TIME ZONE DEFAULT NULL, is_full_day BOOLEAN NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, localisation Geography(Point) DEFAULT NULL, PRIMARY KEY(id))');
         $this->addSql('COMMENT ON COLUMN event.created_at IS \'(DC2Type:datetime_immutable)\'');
         $this->addSql('COMMENT ON COLUMN event.updated_at IS \'(DC2Type:datetime_immutable)\'');
         $this->addSql('COMMENT ON COLUMN event.localisation IS \'(DC2Type:point)\'');
@@ -82,6 +89,9 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_D34E500F93CB796C ON todo_file (file_id)');
         $this->addSql('CREATE TABLE token (id INT NOT NULL, user_id_id INT NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_5F37A13B9D86650F ON token (user_id_id)');
+        $this->addSql('CREATE TABLE "user" (id INT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL, birthdate TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, avatar VARCHAR(255) DEFAULT NULL, color VARCHAR(255) DEFAULT NULL, is_verified BOOLEAN NOT NULL, cgv TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_IDENTIFIER_EMAIL ON "user" (email)');
+        $this->addSql('ALTER TABLE api_token ADD CONSTRAINT FK_7BA2F5EBA15303B9 FOREIGN KEY (user_token_id) REFERENCES "user" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE calendar ADD CONSTRAINT FK_6EA9A1469D86650F FOREIGN KEY (user_id_id) REFERENCES "user" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE event_event ADD CONSTRAINT FK_7AB5BB8B6D130821 FOREIGN KEY (event_source) REFERENCES event (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE event_event ADD CONSTRAINT FK_7AB5BB8B74F658AE FOREIGN KEY (event_target) REFERENCES event (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -105,16 +115,6 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('ALTER TABLE todo_file ADD CONSTRAINT FK_D34E500FEA1EBC33 FOREIGN KEY (todo_id) REFERENCES todo (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE todo_file ADD CONSTRAINT FK_D34E500F93CB796C FOREIGN KEY (file_id) REFERENCES file (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE token ADD CONSTRAINT FK_5F37A13B9D86650F FOREIGN KEY (user_id_id) REFERENCES "user" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE "user" ADD slug VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD first_name VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD last_name VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD birthdate TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD avatar VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD color VARCHAR(7) NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL');
-        $this->addSql('ALTER TABLE "user" ADD updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL');
-        $this->addSql('COMMENT ON COLUMN "user".created_at IS \'(DC2Type:datetime_immutable)\'');
-        $this->addSql('COMMENT ON COLUMN "user".updated_at IS \'(DC2Type:datetime_immutable)\'');
     }
 
     public function down(Schema $schema): void
@@ -122,6 +122,7 @@ final class Version20240606202346 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE acces_id_seq CASCADE');
+        $this->addSql('DROP SEQUENCE api_token_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE calendar_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE event_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE event_tags_id_seq CASCADE');
@@ -130,6 +131,8 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('DROP SEQUENCE tag_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE todo_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE token_id_seq CASCADE');
+        $this->addSql('DROP SEQUENCE "user_id_seq" CASCADE');
+        $this->addSql('ALTER TABLE api_token DROP CONSTRAINT FK_7BA2F5EBA15303B9');
         $this->addSql('ALTER TABLE calendar DROP CONSTRAINT FK_6EA9A1469D86650F');
         $this->addSql('ALTER TABLE event_event DROP CONSTRAINT FK_7AB5BB8B6D130821');
         $this->addSql('ALTER TABLE event_event DROP CONSTRAINT FK_7AB5BB8B74F658AE');
@@ -154,6 +157,7 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('ALTER TABLE todo_file DROP CONSTRAINT FK_D34E500F93CB796C');
         $this->addSql('ALTER TABLE token DROP CONSTRAINT FK_5F37A13B9D86650F');
         $this->addSql('DROP TABLE acces');
+        $this->addSql('DROP TABLE api_token');
         $this->addSql('DROP TABLE calendar');
         $this->addSql('DROP TABLE event');
         $this->addSql('DROP TABLE event_event');
@@ -169,13 +173,6 @@ final class Version20240606202346 extends AbstractMigration
         $this->addSql('DROP TABLE todo_todo');
         $this->addSql('DROP TABLE todo_file');
         $this->addSql('DROP TABLE token');
-        $this->addSql('ALTER TABLE "user" DROP slug');
-        $this->addSql('ALTER TABLE "user" DROP first_name');
-        $this->addSql('ALTER TABLE "user" DROP last_name');
-        $this->addSql('ALTER TABLE "user" DROP birthdate');
-        $this->addSql('ALTER TABLE "user" DROP avatar');
-        $this->addSql('ALTER TABLE "user" DROP color');
-        $this->addSql('ALTER TABLE "user" DROP created_at');
-        $this->addSql('ALTER TABLE "user" DROP updated_at');
+        $this->addSql('DROP TABLE "user"');
     }
 }

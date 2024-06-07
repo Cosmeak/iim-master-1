@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TagRepository::class)]
+#[ApiResource]
 class Tag
 {
     #[ORM\Id]
@@ -45,7 +47,7 @@ class Tag
     /**
      * @var Collection<int, EventTags>
      */
-    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'tag_id')]
+    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'tag')]
     private Collection $eventTags;
 
     public function __construct()

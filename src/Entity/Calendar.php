@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\CalendarRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,6 +10,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CalendarRepository::class)]
+#[ApiResource]
 class Calendar
 {
     #[ORM\Id]
@@ -41,13 +43,13 @@ class Calendar
     /**
      * @var Collection<int, Tag>
      */
-    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'calendar_id')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'calendar')]
     private Collection $tags;
 
     /**
      * @var Collection<int, Event>
      */
-    #[ORM\ManyToMany(targetEntity: Event::class, mappedBy: 'calendar_id')]
+    #[ORM\ManyToMany(targetEntity: Event::class, mappedBy: 'calendar')]
     private Collection $events;
 
     public function __construct()

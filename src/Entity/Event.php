@@ -73,13 +73,13 @@ class Event
     /**
      * @var Collection<int, File>
      */
-    #[ORM\OneToMany(targetEntity: File::class, mappedBy: 'event_id')]
+    #[ORM\OneToMany(targetEntity: File::class, mappedBy: 'event')]
     private Collection $files;
 
     /**
      * @var Collection<int, Todo>
      */
-    #[ORM\OneToMany(targetEntity: Todo::class, mappedBy: 'event_id')]
+    #[ORM\OneToMany(targetEntity: Todo::class, mappedBy: 'event')]
     private Collection $todos;
 
     #[ORM\Column(type: 'point', nullable: true)]
@@ -88,7 +88,7 @@ class Event
     /**
      * @var Collection<int, EventTags>
      */
-    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'event_id')]
+    #[ORM\ManyToMany(targetEntity: EventTags::class, mappedBy: 'event')]
     private Collection $eventTags;
 
     public function __construct()
