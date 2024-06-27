@@ -1,0 +1,27 @@
+services:
+  symfony:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: symfony
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://root:root@db:5432/echo?serverVersion=13&charset=utf8"
+
+  db:
+    image: postgres:13
+    container_name: db
+    environment:
+      POSTGRES_DB: echo
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
