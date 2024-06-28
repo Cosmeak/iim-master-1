@@ -105,7 +105,7 @@ or :
 
 First of all, you need to launch your Docker Desktop app or your Orbstack app.
    ```sh
-   docker-compose up --build --no-cache
+   docker-compose up --build -d
    ```
 
 3. Create the database and play the migrations
