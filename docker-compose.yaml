@@ -9,17 +9,20 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - db
+      - postgres
     environment:
-      DATABASE_URL: "postgresql://root:root@db:5432/echo?serverVersion=13&charset=utf8"
+      DATABASE_URL: ${DATABASE_URL}
 
-  db:
-    image: postgres:13
-    container_name: db
+  postgres:
+    image: postgis/postgis:13-3.1
+    platform: ${PLATFORM}
+    container_name: postgres
     environment:
-      POSTGRES_DB: echo
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
