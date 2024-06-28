@@ -14,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Cosmeak/echoplann-backend">
-    <img src="public/assets/echoplann-logo.png" alt="Logo" width="100">
+    <img src="public/assets/echoplann-logo.png" alt="Logo" width="250">
   </a>
 
 <h3 align="center">EchoPlann</h3>
