@@ -14,3 +14,6 @@ vite.config.ts.timestamp-*
 .DS_Store
 .sourcemaps
 dist/
+
+# Capacitor
+capacitor.config.json.timestamp-*
