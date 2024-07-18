@@ -8,7 +8,7 @@
 	<div class="h-12 w-12 rounded-full bg-black" />
 </div>
 
-<Card.Root class="bg-cgreen m-4 mt-6 pt-4 text-white">
+<Card.Root class="m-4 mt-6 bg-cgreen pt-4 text-white">
 	<Card.Content class="text-center">
 		<div class="rounded-full border-4 border-white p-2">
 			<p class="text-4xl font-semibold">50%</p>
