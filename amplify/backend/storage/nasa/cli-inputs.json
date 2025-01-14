@@ -1,0 +1,10 @@
+{
+  "resourceName": "nasa",
+  "tableName": "nasa",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

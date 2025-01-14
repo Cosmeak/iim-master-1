@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "nasa": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}
