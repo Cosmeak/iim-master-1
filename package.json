@@ -1,0 +1,25 @@
+{
+  "name": "unit-test-jest",
+  "version": "1.0.0",
+  "description": "Unit test with Jest",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "NODE_ENV=test jest --watchAll --verbose --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@codecov/node-codecov-opentelemetry": "^0.0.8",
+    "@google-cloud/functions-framework": "^3.4.0",
+    "@opentelemetry/sdk-trace-node": "^1.24.1",
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "mongodb-memory-server": "^9.2.0",
+    "mongoose": "^8.3.5"
+  }
+}
