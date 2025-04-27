@@ -1,0 +1,3 @@
+[submodule "devops-2"]
+	path = devops-2
+	url = ssh://git@codeberg.org/cosmeak/listeningbird.git
